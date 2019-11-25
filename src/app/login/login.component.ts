@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { sendHttpRequest } from '../services/http.component';
+
 
 @Component({
   selector: 'app-login',
@@ -13,8 +15,18 @@ import { Component, OnInit } from '@angular/core';
 *
 */
 export class LoginComponent implements OnInit {
+  static  token: String;
+  constructor() {
 
-  constructor() { }
+  }
+
+  get token(): String {
+    return LoginComponent.token;
+  }
+  set token(value: String) {
+    LoginComponent.token = value;
+  }
+
 
   ngOnInit() {
   }
@@ -47,14 +59,23 @@ export class LoginComponent implements OnInit {
       "email": null
     });
  
+ 
+  
+    sendHttpRequest(url, data.toString()).then(response => {
+      console.log("response : " + response);
+      LoginComponent.token = response
+    });
 
-    xhr.onreadystatechange = function () { /* .. */ };
-    xhr.open("POST", url);
-    xhr.withCredentials = true;
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(data.toString());
 
+
+
+
+
+
+    };
+
+  
   }
-}
+
 
 
