@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerModel } from '../models/ServerModel';
-import { sendHttpGetRequest } from '../services/http.component';
+import { loadProducts } from '../services/product';
 
 @Component({
   selector: 'app-products',
@@ -17,19 +17,3 @@ export class ProductsComponent implements OnInit {
 }
 
 
-function loadProducts() {
-  var host = ServerModel.host
-  var port = ServerModel.port
-  var url = "http://" + host + ":" + port + "/product/show";
-
-
-
-
-
-
-  sendHttpGetRequest(url).then(response => {
-    console.log("response : " + response);
-    return response;
-
-  });
-} 

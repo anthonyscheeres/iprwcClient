@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { sendHttpPostRequest } from '../services/http.component';
 import { ServerModel } from '../models/ServerModel';
 import { Router } from '@angular/router';
 import { responseR } from '../models/ResponseRequest';
+import { register } from '../services/user';
 
 @Component({
   selector: 'app-register',
@@ -38,27 +38,7 @@ export class RegisterComponent implements OnInit {
     const username = target.querySelector('#username').value
     const password = target.querySelector('#password').value
     const email = target.querySelector('#email').value
-
-    var host = ServerModel.host
-    var port = ServerModel.port
-    var urlToServer = "http://" + host + ":" + port + "/user/create";
-
-    var data = JSON.stringify({
-      "username": username,
-      "password": password,
-      "id": null,
-      "permission": null,
-      "email": email
-    });
-
-
-    sendHttpPostRequest(urlToServer, data.toString()).then(response => {
-      console.log("response : " + response);
-      if (response != responseR.fail) {
-        this._router.navigate(['/login']);
-      }
-
-    });
+    register(username, password, email)
   }
 }
 

@@ -11,7 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { JSONTableModule } from 'angular-json-table';  // import the Module.
+import { JSONTableModule } from 'angular-json-table';
+import { AddProductComponent } from './add-product/add-product.component';  // import the Module.
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { JSONTableModule } from 'angular-json-table';  // import the Module.
     UsersComponent,
     ProductsComponent,
     ShoppingCartComponent,
+    AddProductComponent,
    
   ],
   imports: [
@@ -43,6 +45,13 @@ import { JSONTableModule } from 'angular-json-table';  // import the Module.
           path: "login",
           component: LoginComponent
         },
+
+        {
+          path: "addProduct",
+          component: AddProductComponent
+        },
+
+
         {
           path: "users",
           component: UsersComponent

@@ -1,8 +1,9 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import { sendHttpGetRequest, fetchJsonGet,  } from '../services/http.component';
+
 import { LoginComponent } from '../login/login.component';
 import { ServerModel } from '../models/ServerModel';
 import { Router } from '@angular/router';
+import { loadUsers } from '../services/user';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-users',
@@ -11,12 +12,13 @@ import { Router } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
   dataFromServer: any ;
-   currentSelected: Number = null;
-  customHeaders: any = {
-    thead: ['username', 'permission'], // the Column Name in table head.
-    displayed: ['username', 'permission'] // the data it should populate in table.
-  };
+ 
+  idSelectedVote = null;
 
+  setSelected = function (idSelectedVote) {
+    console.log(idSelectedVote)
+    this.idSelectedVote = idSelectedVote;
+  };
 
 
   constructor(private _router: Router) {
@@ -36,7 +38,7 @@ export class UsersComponent implements OnInit {
 
   async ngOnInit() {
     await loadUsers().then(response => {
-      this.dataFromServer = response
+      this.dataFromServer = JSON.parse(response);
      
     })
     console.log(this.dataFromServer);
@@ -45,12 +47,4 @@ export class UsersComponent implements OnInit {
  
 
 }
-async function loadUsers() {
-  var host = ServerModel.host
-  var port = ServerModel.port
-  var url = "http://" + host + ":" + port + "/user/show";
 
-  return fetchJsonGet(url)
- 
-
-} 
