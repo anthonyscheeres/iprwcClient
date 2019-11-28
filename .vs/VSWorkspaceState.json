@@ -3,11 +3,8 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\http",
     "\\src\\app\\login",
-    "\\src\\app\\register",
-    "\\src\\app\\users"
+    "\\src\\app\\register"
   ],
-  "SelectedNode": "\\src\\app\\login\\login.component.ts",
   "PreviewInSolutionExplorer": false
 }

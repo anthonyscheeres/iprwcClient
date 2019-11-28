@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
+import { ProductsComponent } from './products/products.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +18,8 @@ import { UsersComponent } from './users/users.component';
     HomeComponent,
     RegisterComponent,
     UsersComponent,
+    ProductsComponent,
+    ShoppingCartComponent,
    
   ],
   imports: [
