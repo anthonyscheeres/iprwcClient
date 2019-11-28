@@ -1,1 +1,5 @@
-<p>products works!</p>
+<json-table [dataSource]="dataFromServer"
+            [headers]="customHeaders"
+            [update]="true/false"
+            (deleteRow)="deleteByIdS($event)"
+            (updateRow)="updateChanges($event)"></json-table>

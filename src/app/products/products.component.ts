@@ -8,7 +8,7 @@ import { sendHttpGetRequest } from '../services/http.component';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products = loadProducts();
+  dataSource = loadProducts();
   constructor() { }
 
   ngOnInit() {
