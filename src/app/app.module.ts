@@ -11,6 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { JSONTableModule } from 'angular-json-table';  // import the Module.
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
    
   ],
   imports: [
+    JSONTableModule, // Add the JSONTableModule
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -39,6 +42,10 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
         {
           path: "login",
           component: LoginComponent
+        },
+        {
+          path: "shop",
+          component: ProductsComponent
         },
 
         // otherwise redirect to home
