@@ -41,7 +41,7 @@ async function waitForResponseGet(url: string) {
 * @author Anthony Scheeres
 *
 */
-async function fetchJsonGet(url) {
+export async function fetchJsonGet(url) {
   var content: string = null;
   const rawResponse = await fetch(url, {
     method: ProtocolR.GET,

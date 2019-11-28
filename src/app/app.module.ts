@@ -44,6 +44,10 @@ import { JSONTableModule } from 'angular-json-table';  // import the Module.
           component: LoginComponent
         },
         {
+          path: "users",
+          component: UsersComponent
+        },
+        {
           path: "shop",
           component: ProductsComponent
         },
