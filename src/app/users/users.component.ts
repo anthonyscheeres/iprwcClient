@@ -1,9 +1,8 @@
 
-import { LoginComponent } from '../login/login.component';
 import { ServerModel } from '../models/ServerModel';
 import { Router } from '@angular/router';
-import { loadUsers } from '../services/user';
 import { Component, OnInit } from '@angular/core';
+import { loadUsers } from '../services/user';
 
 @Component({
   selector: 'app-users',

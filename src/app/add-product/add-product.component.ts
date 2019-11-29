@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerModel } from '../models/ServerModel';
-import { sendHttpGetRequest } from '../services/http.component';
+import { sendHttpGetRequest } from '../services/http';
 
 @Component({
   selector: 'app-add-product',

@@ -1,4 +1,4 @@
-import { fetchJsonGet, sendHttpPostRequest } from "./http";
+import { fetchJsonGet, sendHttpPostRequest, sendHttpGetRequest } from "./http";
 import { ServerModel } from '../models/ServerModel';
 import { responseR } from '../models/ResponseRequest';
 import { AccountModel } from '../models/AccountModel';
@@ -8,7 +8,7 @@ export async function loadUsers() {
   var port = ServerModel.port
   var url = "http://" + host + ":" + port + "/user/show";
 
-  return fetchJsonGet(url)
+  return sendHttpGetRequest(url)
 
 
 }
