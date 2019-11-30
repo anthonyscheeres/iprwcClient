@@ -1,7 +1,7 @@
-
+import { Component, OnInit } from '@angular/core';
+import { LoginComponent } from '../login/login.component';
 import { ServerModel } from '../models/ServerModel';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
 import { loadUsers } from '../services/user';
 
 @Component({
@@ -10,40 +10,21 @@ import { loadUsers } from '../services/user';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  dataFromServer: any ;
- 
-  idSelectedVote = null;
+  dataFromServer: any = loadUsers();
+  static currentSelected: Number = null;
 
-  setSelected = function (idSelectedVote) {
-    console.log(idSelectedVote)
-    this.idSelectedVote = idSelectedVote;
-  };
-
-
-  constructor(private _router: Router) {
-   
-  }
-
-  deleteByIdS(ids) {
-    console.log(ids); // this function gives the ID of deleted rows.. as an array
-  }
-
-  updateChanges(row) {
-    console.log(row); // This return the row which is updated with the id.
-  }
-
+  constructor(private _router: Router) { }
 
 
 
   async ngOnInit() {
-    await loadUsers().then(response => {
-      this.dataFromServer = JSON.parse(response);
-     
-    })
-    console.log(this.dataFromServer);
+    await loadUsers().then(r => {
+      this.dataFromServer = r
+    });
+
+
 
   }
- 
+
 
 }
-

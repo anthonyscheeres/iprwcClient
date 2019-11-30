@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerModel } from '../models/ServerModel';
 import { loadProducts } from '../services/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -9,7 +10,7 @@ import { loadProducts } from '../services/product';
 })
 export class ProductsComponent implements OnInit {
   dataSource = loadProducts();
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
   }

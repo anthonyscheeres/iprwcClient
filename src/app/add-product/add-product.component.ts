@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerModel } from '../models/ServerModel';
-import { sendHttpGetRequest } from '../services/http';
+import { insertProduct } from '../services/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-product',
@@ -9,25 +10,17 @@ import { sendHttpGetRequest } from '../services/http';
 })
 export class AddProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
   }
 
 }
-function addProduct() {
-  var host = ServerModel.host
-  var port = ServerModel.port
-  var url = "http://" + host + ":" + port + "/product/create";
+async function addProduct(event) {
+  var target = event.target
+  var name = target.querySelector('#name').value
+  var price = target.querySelector('#price').value
 
 
-
-
-
-
-  sendHttpGetRequest(url).then(response => {
-    console.log("response : " + response);
-    return response;
-
-  });
+  await insertProduct(name, price);
 }

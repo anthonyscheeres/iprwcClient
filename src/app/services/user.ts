@@ -1,14 +1,15 @@
-import { fetchJsonGet, sendHttpPostRequest, sendHttpGetRequest } from "./http";
+
 import { ServerModel } from '../models/ServerModel';
 import { responseR } from '../models/ResponseRequest';
 import { AccountModel } from '../models/AccountModel';
+import { fetchJsonPost, fetchJsonGet } from './http';
 
-export async function loadUsers() {
+export function loadUsers() {
   var host = ServerModel.host
   var port = ServerModel.port
   var url = "http://" + host + ":" + port + "/user/show";
 
-  return sendHttpGetRequest(url)
+  return fetchJsonGet(url)
 
 
 }
@@ -30,20 +31,16 @@ export function login(username, password) {
 
 
 
-  sendHttpPostRequest(url, data.toString()).then(response => {
-    console.log("response : " + response);
-    if (response != responseR.fail) {
-      AccountModel.token = response
+  
+  return fetchJsonPost(url, data.toString());
 
-    }
 
-  });
 
 
 }
 
 
-export function register(username, password , email ) {
+export function register(username, password, email) {
 
   var host = ServerModel.host
   var port = ServerModel.port
@@ -58,11 +55,6 @@ export function register(username, password , email ) {
   });
 
 
-  sendHttpPostRequest(urlToServer, data.toString()).then(response => {
-    console.log("response : " + response);
-    if (response != responseR.fail) {
-      this._router.navigate(['/login']);
-    }
+  return fetchJsonPost(urlToServer, data.toString())
 
-  });
-}
+}  

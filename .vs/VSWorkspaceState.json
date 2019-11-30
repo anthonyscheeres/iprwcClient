@@ -3,8 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\add-product",
+    "\\src\\app\\home",
     "\\src\\app\\login",
-    "\\src\\app\\register"
+    "\\src\\app\\shopping-cart",
+    "\\src\\app\\users"
   ],
+  "SelectedNode": "\\src\\app\\shopping-cart\\shopping-cart.component.ts",
   "PreviewInSolutionExplorer": false
 }

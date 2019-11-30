@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ServerModel } from '../models/ServerModel';
-import { Router } from '@angular/router';
-import { responseR } from '../models/ResponseRequest';
 import { register } from '../services/user';
+import { responseR } from '../models/ResponseRequest';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -19,31 +18,33 @@ import { register } from '../services/user';
 *
 */
 export class RegisterComponent implements OnInit {
-
   constructor(private _router: Router) { }
+
 
   ngOnInit() {
   }
-
-
-  /**
-  *
-  * @author Anthony Scheeres
-  *
-  */
-  registerUser(event) {
+  async registerUser(event) {
     event.preventDefault()
     const target = event.target
 
     const username = target.querySelector('#username').value
     const password = target.querySelector('#password').value
     const email = target.querySelector('#email').value
-    register(username, password, email)
+    await register(username, password, email).then(response => {
+
+      if (response != responseR.fail) {
+        this._router.navigate(['/login']);
+
+      }
+    });
+
+
+   
   }
 }
 
 
-
+   
 
 
 

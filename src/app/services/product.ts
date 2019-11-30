@@ -1,9 +1,11 @@
-import { sendHttpGetRequest } from './http';
+
 import { ServerModel } from '../models/ServerModel';
+import { AccountModel } from '../models/AccountModel';
+import { fetchJsonGet, fetchJsonPost } from './http';
 
 export function loadProducts() {
-  var host = ServerModel.host
-  var port = ServerModel.port
+  var host = ServerModel.host;
+  var port = ServerModel.port;
   var url = "http://" + host + ":" + port + "/product/show";
 
 
@@ -11,17 +13,23 @@ export function loadProducts() {
 
 
 
-  sendHttpGetRequest(url).then(response => {
-    console.log("response : " + response);
-    return response;
-
-  });
+  return fetchJsonGet(url);
 }
 
 
+
+
 export function insertProduct(name, price) {
-  var data = JSON.stringify({
+  var host = ServerModel.host;
+  var port = ServerModel.port;
+  var token = AccountModel.token;
+  var url = "http://" + host + ":" + port + "/product/"+ token + "create";
+  var json = JSON.stringify({
     "name": name,
-    "price" :price
-  })
+    "price": price
+  });
+
+
+
+  return fetchJsonPost(url, json);
 }
