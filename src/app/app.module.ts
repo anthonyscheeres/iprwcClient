@@ -15,6 +15,11 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
+
+
+
 
 
 @NgModule({
@@ -67,7 +72,9 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
         // otherwise redirect to home
         { path: '**', redirectTo: '' }
       ]
-    )
+    ),
+        FormsModule,
+        ReactiveFormsModule
   ],
   providers: [   {
           provide: LocationStrategy, useClass: HashLocationStrategy

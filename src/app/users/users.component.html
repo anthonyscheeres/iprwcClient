@@ -1,14 +1,12 @@
 <div class="container container-fluid">
   <h2>Users</h2>
 <hr>
-  <table class="table table-bordered table-hover">
-    <thead class="thead-dark">
+
   <table class="table table-fixed">
     <thead>
     <th class="col-4" scope="col">Gebruikersnaam</th>
     <th class="col-4" scope="col">Permission</th>
 
-    </thead>
     <tbody>
     <tr class="row-12" *ngFor="let value of dataFromServer"
         (click)="setSelected(value)"
@@ -31,4 +29,6 @@
     <button (click)="onGiveDelete()" class="btn btn-dark">Geef verwijderrechten</button>
   </div>
 
-</div>
+
+
+  </div>
