@@ -2,13 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app",
-    "\\src\\app\\add-product",
-    "\\src\\app\\home",
-    "\\src\\app\\login",
-    "\\src\\app\\shopping-cart",
-    "\\src\\app\\users"
+    "\\src\\app"
   ],
-  "SelectedNode": "\\src\\app\\shopping-cart\\shopping-cart.component.ts",
+  "SelectedNode": "\\src\\app\\app.component.css",
   "PreviewInSolutionExplorer": false
 }

@@ -4,14 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { AddProductComponent } from './add-product/add-product.component';  // import the Module.
-import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -20,10 +24,12 @@ import { HomeComponent } from './home/home.component';
     HomeComponent,
     RegisterComponent,
     UsersComponent,
+    NavigationBarComponent,
+    LoginFormComponent,
+    RegisterFormComponent,
     ProductsComponent,
-    ShoppingCartComponent,
-    AddProductComponent,
-   
+    ShoppingCartComponent
+
   ],
   imports: [
     BrowserModule,
@@ -43,13 +49,6 @@ import { HomeComponent } from './home/home.component';
           path: "login",
           component: LoginComponent
         },
-
-        {
-          path: "addProduct",
-          component: AddProductComponent
-        },
-
-
         {
           path: "users",
           component: UsersComponent
@@ -57,6 +56,12 @@ import { HomeComponent } from './home/home.component';
         {
           path: "shop",
           component: ProductsComponent
+        },
+
+        {
+          path: "cart",
+          component: ShoppingCartComponent
+
         },
 
         // otherwise redirect to home
