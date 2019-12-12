@@ -24,9 +24,10 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [ "styles.css", "../node_modules/bootstrap/dist/css/bootstrap.min.css" ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -120,6 +121,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "TestlabWeb"
 }
