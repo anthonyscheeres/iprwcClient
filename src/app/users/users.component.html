@@ -3,12 +3,14 @@
 <hr>
   <table class="table table-bordered table-hover">
     <thead class="thead-dark">
-    <th scope="col">Username</th>
-    <th scope="col">Permissions</th>
+  <table class="table table-fixed">
+    <thead>
+    <th class="col-4" scope="col">Gebruikersnaam</th>
+    <th class="col-4" scope="col">Permission</th>
+
     </thead>
     <tbody>
-
-    <tr *ngFor="let value of dataFromServer"
+    <tr class="row-12" *ngFor="let value of dataFromServer"
         (click)="setSelected(value)"
         [ngStyle]="{backgroundColor: selectedUser == value ? 'grey': 'transparent'}">
       <td>{{ value.username }}</td>
