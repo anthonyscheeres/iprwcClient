@@ -1,7 +1,6 @@
 body, html {
   height: 100%;
   font-family: Poppins-Regular, sans-serif;
-  background-color: grey;
 }
 
 
@@ -44,9 +43,7 @@ form {
 
 }
 
-
 .container-login100 {
-
   width: 100%;
   min-height: 100vh;
   display: -webkit-box;
@@ -60,7 +57,6 @@ form {
   padding: 15px;
   background-color: #024D78;
 }
-
 
 
 
