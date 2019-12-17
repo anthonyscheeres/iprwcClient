@@ -27,7 +27,7 @@ export function insertProduct(name, price) {
   var token = AccountModel.token;
   var url = "http://" + host + ":" + port + "/product/"+ token + "/create";
   var json = JSON.stringify({
-    "name": name,
+    "name_p": name,
     "price": price
   });
 
