@@ -42,8 +42,8 @@ export class ProductsComponent implements OnInit {
 
 
 
-  open() {
-    ShoppingCartModel.products.push(this.selected)
+  open(value) {
+    ShoppingCartModel.products.push(value)
   }
 
 
