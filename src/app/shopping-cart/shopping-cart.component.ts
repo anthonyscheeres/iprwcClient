@@ -10,12 +10,18 @@ import { ShoppingCartModel } from '../models/ShoppingCartModel';
 })
 export class ShoppingCartComponent implements OnInit {
   dataFromServer: ProductModel[] = ShoppingCartModel.products;
+  static currentSelected: any = null;
+  private selected: ProductModel;
 
   constructor(private _router: Router) { }
 
   ngOnInit() {
   }
   open() {
+
+  }
+  setSelected(product: ProductModel) {
+    this.selected = product;
 
   }
 }
