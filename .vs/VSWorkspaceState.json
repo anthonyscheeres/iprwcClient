@@ -3,9 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\change-product-img",
-    "\\src\\app\\products"
+    "\\src\\app\\models",
+    "\\src\\app\\services",
+    "\\src\\app\\users"
   ],
-  "SelectedNode": "\\src\\app\\change-product-img\\change-product-img.component.ts",
+  "SelectedNode": "\\src\\app\\services\\user.ts",
   "PreviewInSolutionExplorer": false
 }

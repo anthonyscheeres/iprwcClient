@@ -8,4 +8,5 @@ export class UserModel {
   has_delete: boolean;
   is_super_user: boolean;
   token: string;
+    static username: any;
 }
