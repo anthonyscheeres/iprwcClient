@@ -8,6 +8,7 @@ import { AccountModel } from '../models/AccountModel';
 import { getUsers } from '../services/user';
 import { ProductModel } from '../models/ProductModel';
 import { HttpClient } from "@angular/common/http";
+import { ShoppingCartModel } from '../models/ShoppingCartModel';
 
 @Component({
   selector: 'app-products',
@@ -42,7 +43,7 @@ export class ProductsComponent implements OnInit {
 
 
   open() {
-   
+    ShoppingCartModel.products.push(this.selected)
   }
 
 
