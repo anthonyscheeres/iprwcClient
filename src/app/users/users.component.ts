@@ -24,35 +24,43 @@ export class UsersComponent implements OnInit {
 
   }
 
-  onDeleteUser() {
-    deleteUser(this.selectedUser.username)
-  }
 
-  onGiveRead() {
-    giveRead(this.selectedUser.username)
-
-  }
-
-  onGiveWrite() {
-    giveWrite(this.selectedUser.username)
-  
-  }
-
-  onGiveDelete() {
-    giveDelete(this.selectedUser.username);
-  }
-
-  async ngOnInit() {
-    AccountModel.token = localStorage.getItem("token")
-
+  fecthuser() {
     this.http.get<UserModel[]>(
       getUsers())
       .subscribe(
         responseData => {
           this.dataFromServer = responseData;
-          console.log(responseData);
+         
         }
       );
+  }
+
+
+  onDeleteUser() {
+    deleteUser(this.selectedUser.username)
+    this.fecthuser() 
+  }
+
+  onGiveRead() {
+    giveRead(this.selectedUser.username)
+    this.fecthuser() 
+  }
+
+  onGiveWrite() {
+    giveWrite(this.selectedUser.username)
+    this.fecthuser() 
+  }
+
+  onGiveDelete() {
+    giveDelete(this.selectedUser.username);
+    this.fecthuser() 
+  }
+
+  async ngOnInit() {
+    AccountModel.token = localStorage.getItem("token")
+
+    this.fecthuser() 
   }
 
 }
