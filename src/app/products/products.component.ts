@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
+  static currentlySelectedProduct;
   dataSource = loadProducts();
   constructor(private _router: Router) { }
 
