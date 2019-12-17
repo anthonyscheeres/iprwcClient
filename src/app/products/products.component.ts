@@ -15,7 +15,10 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  open() {
+    const modalRef = this.modalService.open(CreateExperimentComponent);
+    modalRef.componentInstance.name = 'World'
+  }
 }
 
 

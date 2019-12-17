@@ -17,6 +17,7 @@ import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ChangeProductImgComponent } from './change-product-img/change-product-img.component';
+import { CreateExperimentComponent } from './create-experiment/create-experiment.component';
 
 
 
@@ -35,8 +36,8 @@ import { ChangeProductImgComponent } from './change-product-img/change-product-i
     RegisterFormComponent,
     ProductsComponent,
     ShoppingCartComponent,
-    ChangeProductImgComponent
-
+    ChangeProductImgComponent,
+        CreateExperimentComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +78,8 @@ import { ChangeProductImgComponent } from './change-product-img/change-product-i
     ),
         FormsModule,
         ReactiveFormsModule
+  ], entryComponents: [
+    CreateExperimentComponent
   ],
   providers: [   {
           provide: LocationStrategy, useClass: HashLocationStrategy
