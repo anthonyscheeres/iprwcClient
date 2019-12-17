@@ -4,6 +4,7 @@ import { loadProducts } from '../services/product';
 import { Router } from '@angular/router';
 import { CreateExperimentComponent } from '../create-experiment/create-experiment.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AccountModel } from '../models/AccountModel';
 
 @Component({
   selector: 'app-products',
@@ -17,6 +18,7 @@ export class ProductsComponent implements OnInit {
   constructor(private _router: Router,  private modalService: NgbModal) { }
 
   ngOnInit() {
+    AccountModel.token = localStorage.getItem("token")
   }
   open() {
     const modalRef = this.modalService.open(CreateExperimentComponent);

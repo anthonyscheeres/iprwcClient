@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import {getUsers, loadUsers, deleteUser, giveRead, giveWrite, giveDelete} from '../services/user';
 import { HttpClient } from "@angular/common/http";
 import {UserModel} from "../models/UserModel";
+import { AccountModel } from '../models/AccountModel';
 
 @Component({
   selector: 'app-users',
@@ -40,7 +41,7 @@ export class UsersComponent implements OnInit {
   }
 
   async ngOnInit() {
-
+    AccountModel.token = localStorage.getItem("token")
 
     this.http.get<UserModel[]>(
       getUsers())
