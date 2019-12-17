@@ -12,7 +12,6 @@ export function loadUsers() {
   var host = ServerModel.host;
   var port = ServerModel.port;
   var token = AccountModel.token;
-  var token = AccountModel.token;
   var url = "http://" + host + ":" + port + "/user/show";
   return url
 }
@@ -75,15 +74,15 @@ export function getUsers() {
 
 
 
-export function deleteUser(user: UserModel) {
+export function deleteUser(user) {
   var host = ServerModel.host;
   var port = ServerModel.port;
   var token = AccountModel.token
   var urlToServer = "http://" + host + ":" + port + "/user/" + token + "/remove";
 
- var username = UserModel.username
+  console.log("username:"+user)
   var data = JSON.stringify({
-    "username": username,
+    "username": user,
     "password": null,
     "id": null,
     "permission": null,
@@ -94,15 +93,14 @@ export function deleteUser(user: UserModel) {
   return fetchJsonPost(urlToServer, data.toString())
 }
 
-export function giveRead(user: UserModel) {
+export function giveRead(user) {
   var host = ServerModel.host;
   var port = ServerModel.port;
   var token = AccountModel.token
   var urlToServer = "http://" + host + ":" + port + "/user/" + token + "/read";
 
-  var username = UserModel.username
   var data = JSON.stringify({
-    "username": username,
+    "username": user,
     "password": null,
     "id": null,
     "permission": null,
@@ -113,15 +111,14 @@ export function giveRead(user: UserModel) {
   return fetchJsonPost(urlToServer, data.toString())
 }
 
-export function giveWrite(user: UserModel) {
+export function giveWrite(user) {
   var host = ServerModel.host;
   var port = ServerModel.port;
   var token = AccountModel.token
   var urlToServer = "http://" + host + ":" + port + "/user/" + token + "/write";
 
-  var username = UserModel.username
   var data = JSON.stringify({
-    "username": username,
+    "username": user,
     "password": null,
     "id": null,
     "permission": null,
@@ -132,15 +129,14 @@ export function giveWrite(user: UserModel) {
   return fetchJsonPost(urlToServer, data.toString())
 }
 
-export function giveDelete(user: UserModel) {
+export function giveDelete(user) {
   var host = ServerModel.host;
   var port = ServerModel.port;
   var token = AccountModel.token
   var urlToServer = "http://" + host + ":" + port + "/user/"+token +"/delete";
 
-  var username = UserModel.username
   var data = JSON.stringify({
-    "username": username,
+    "username": user,
     "password": null,
     "id": null,
     "permission": null,

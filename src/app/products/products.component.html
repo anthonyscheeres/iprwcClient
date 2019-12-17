@@ -16,7 +16,7 @@
     <th class="col-4" scope="col">Options</th>
 
     <tr class="row-12" *ngFor='let value of dataFromServer; trackBy: index;'>
-      <td>{{ value.name }}</td>
+      <td>{{ value.name_p }}</td>
       <td>{{ value.price }}</td>
       <td><button class="btn btn-lg btn-outline-primary" (click)="open()">changeImg</button></td>
     </tr>

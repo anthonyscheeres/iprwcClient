@@ -3,16 +3,18 @@ import { ServerModel } from '../models/ServerModel';
 import { AccountModel } from '../models/AccountModel';
 import { fetchJsonGet, fetchJsonPost } from './http';
 
-export function loadProducts() {
+
+
+export function urlProduct() {
   var host = ServerModel.host;
   var port = ServerModel.port;
   var url = "http://" + host + ":" + port + "/product/show";
+  return url;
 
+}
 
-
-
-
-
+export function loadProducts() {
+  var url = urlProduct()
   return fetchJsonGet(url);
 }
 

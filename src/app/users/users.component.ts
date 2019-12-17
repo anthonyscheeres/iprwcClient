@@ -21,27 +21,25 @@ export class UsersComponent implements OnInit {
 
   setSelected(user: UserModel) {
     this.selectedUser = user;
-    console.log(user.username);
+
   }
 
   onDeleteUser() {
-    deleteUser(this.selectedUser)
-    this.dataFromServer = loadUsers();
+    deleteUser(this.selectedUser.username)
   }
 
   onGiveRead() {
-    giveRead(this.selectedUser)
-    this.dataFromServer = loadUsers();
+    giveRead(this.selectedUser.username)
+
   }
 
   onGiveWrite() {
-    giveWrite(this.selectedUser)
-    this.dataFromServer = loadUsers();
+    giveWrite(this.selectedUser.username)
+  
   }
 
   onGiveDelete() {
-    giveDelete(this.selectedUser);
-    this.dataFromServer = loadUsers();
+    giveDelete(this.selectedUser.username);
   }
 
   async ngOnInit() {
