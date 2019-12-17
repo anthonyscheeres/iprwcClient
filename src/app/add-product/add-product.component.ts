@@ -14,12 +14,12 @@ export class AddProductComponent implements OnInit {
 
   ngOnInit() {
   }
+  async addProduct(event) {
+    var target = event.target
+    var name = target.querySelector('#name').value
+    var price = target.querySelector('#price').value
+    await insertProduct(name, price);
+  }
+}
 
-}
-async function addProduct(event) {
-  var target = event.target
-  var name = target.querySelector('#name').value
-  var price = target.querySelector('#price').value
-  await insertProduct(name, price);
-}
 
