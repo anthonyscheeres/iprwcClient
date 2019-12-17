@@ -16,7 +16,10 @@ import { HttpClient } from "@angular/common/http";
 })
 export class ProductsComponent implements OnInit {
   static currentlySelectedProduct;
-  dataFromServer: any = loadProducts()
+  dataFromServer: any 
+  static currentSelected: any = null;
+  private selected: ProductModel;
+
 
   constructor(private _router: Router, private modalService: NgbModal, private http: HttpClient) { }
 
@@ -34,9 +37,21 @@ export class ProductsComponent implements OnInit {
         }
       )
   }
+
+
+
+
   open() {
    
   }
+
+
+  setSelected(product: ProductModel) {
+    this.selected = product;
+
+  }
+
+
 }
 
 

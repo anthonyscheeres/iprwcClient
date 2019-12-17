@@ -13,7 +13,7 @@ import { AccountModel } from '../models/AccountModel';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  dataFromServer: any = loadUsers();
+  dataFromServer: any;
   static currentSelected: any = null;
   private selectedUser: UserModel;
 
