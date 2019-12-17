@@ -54,6 +54,4 @@ export function changeImg(img, id) {
 
   return fetchJsonPost(url, json);
 }
-export function handleChangeImg(img, id) {
-  changeImg(img, id)
-}
+

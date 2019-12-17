@@ -16,6 +16,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ChangeProductImgComponent } from './change-product-img/change-product-img.component';
 
 
 
@@ -33,7 +34,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     LoginFormComponent,
     RegisterFormComponent,
     ProductsComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    ChangeProductImgComponent
 
   ],
   imports: [
