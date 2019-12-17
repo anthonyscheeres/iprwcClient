@@ -18,6 +18,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ChangeProductImgComponent } from './change-product-img/change-product-img.component';
 import { CreateExperimentComponent } from './create-experiment/create-experiment.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -42,6 +43,7 @@ import { CreateExperimentComponent } from './create-experiment/create-experiment
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgbModule,
     AppRoutingModule,
     RouterModule.forRoot(
       [
@@ -76,14 +78,15 @@ import { CreateExperimentComponent } from './create-experiment/create-experiment
         { path: '**', redirectTo: '' }
       ]
     ),
-        FormsModule,
-        ReactiveFormsModule
-  ], entryComponents: [
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  entryComponents: [
     CreateExperimentComponent
   ],
-  providers: [   {
-          provide: LocationStrategy, useClass: HashLocationStrategy
-      }],
+  providers: [{
+    provide: LocationStrategy, useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
