@@ -17,8 +17,17 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit() {
   }
-  open() {
-    console.log(this.dataFromServer)
+  open(values) {
+    var products: ProductModel[] = ShoppingCartModel.products
+    var filtered = products.filter(function (value) {
+
+      return !value === values;
+
+    });
+    console.log(filtered);
+    ShoppingCartModel.products = filtered
+
+
   }
   setSelected(product: ProductModel) {
     this.selected = product;

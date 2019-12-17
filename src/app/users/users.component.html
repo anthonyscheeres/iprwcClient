@@ -10,7 +10,7 @@
       <tbody>
         <tr class="row-12" *ngFor="let value of dataFromServer"
             (click)="setSelected(value)"
-            [ngStyle]="{backgroundColor: selectedUser == value ? 'grey': 'transparent'}">
+            [ngStyle]="{backgroundColor: selectedUser == value ? '#F2F2F2': 'transparent'}">
           <td>{{ value.username }}</td>
           <td>{{ value.permission }}</td>
         </tr>
