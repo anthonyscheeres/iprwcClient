@@ -23,7 +23,7 @@ export function insertProduct(name, price) {
   var host = ServerModel.host;
   var port = ServerModel.port;
   var token = AccountModel.token;
-  var url = "http://" + host + ":" + port + "/product/"+ token + "create";
+  var url = "http://" + host + ":" + port + "/product/"+ token + "/create";
   var json = JSON.stringify({
     "name": name,
     "price": price
@@ -31,5 +31,29 @@ export function insertProduct(name, price) {
 
 
 
+
+
+
   return fetchJsonPost(url, json);
+}
+
+export function changeImg(img, id) {
+  var host = ServerModel.host;
+  var port = ServerModel.port;
+  var token = AccountModel.token;
+  var url = "http://" + host + ":" + port + "/product/" + token + "/changeImg ";
+  var json = JSON.stringify({
+    "id": id,
+    "img": img
+  });
+
+
+
+
+
+
+  return fetchJsonPost(url, json);
+}
+export function handleChangeImg(img, id) {
+  changeImg(img, id)
 }

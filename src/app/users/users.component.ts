@@ -41,13 +41,6 @@ export class UsersComponent implements OnInit {
 
   async ngOnInit() {
 
-    // this.http.get<UserModel[]>(loadUsers())
-    //   .subscribe(
-    //     responseData => {
-    //       this.dataFromServer = responseData;
-    //       console.log(responseData);
-    //     }
-    //   )
 
     this.http.get<UserModel[]>(
       getUsers())
