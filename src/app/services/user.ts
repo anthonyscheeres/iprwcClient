@@ -3,6 +3,7 @@ import { ServerModel } from '../models/ServerModel';
 import { responseR } from '../models/ResponseRequest';
 import { AccountModel } from '../models/AccountModel';
 import { fetchJsonPost, fetchJsonGet } from './http';
+import { UserModel } from '../models/UserModel';
 
 export function loadUsers() {
   var host = ServerModel.host;
@@ -66,4 +67,22 @@ export function getUsers() {
   //ToDo: make it so that the token is loaded from the user itself
 
   return url;
+}
+
+
+
+export function deleteUser(user: UserModel) {
+
+}
+
+export function giveRead(user: UserModel) {
+
+}
+
+export function giveWrite(user: UserModel) {
+
+}
+
+export function giveDelete(user: UserModel) {
+
 }

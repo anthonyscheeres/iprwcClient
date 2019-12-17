@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { ServerModel } from '../models/ServerModel';
 import { Router } from '@angular/router';
-import {getUsers, loadUsers} from '../services/user';
+import {getUsers, loadUsers, deleteUser, giveRead, giveWrite, giveDelete} from '../services/user';
 import { HttpClient } from "@angular/common/http";
 import {UserModel} from "../models/UserModel";
 
@@ -24,19 +24,19 @@ export class UsersComponent implements OnInit {
   }
 
   onDeleteUser() {
-
+    deleteUser(this.selectedUser)
   }
 
   onGiveRead() {
-
+    giveRead(this.selectedUser)
   }
 
   onGiveWrite() {
-
+    giveWrite(this.selectedUser)
   }
 
   onGiveDelete() {
-
+    giveDelete(this.selectedUser);
   }
 
   async ngOnInit() {
