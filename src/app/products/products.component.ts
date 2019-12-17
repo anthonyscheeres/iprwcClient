@@ -35,8 +35,7 @@ export class ProductsComponent implements OnInit {
       )
   }
   open() {
-    const modalRef = this.modalService.open(CreateExperimentComponent);
-    modalRef.componentInstance.name = 'World'
+   
   }
 }
 

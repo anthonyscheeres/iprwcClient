@@ -19,6 +19,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ChangeProductImgComponent } from './change-product-img/change-product-img.component';
 import { CreateExperimentComponent } from './create-experiment/create-experiment.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddProductComponent } from './add-product/add-product.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -28,6 +30,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
+    AddProductComponent,
     LoginComponent,
     HomeComponent,
     RegisterComponent,
@@ -38,7 +41,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProductsComponent,
     ShoppingCartComponent,
     ChangeProductImgComponent,
-        CreateExperimentComponent
+    CreateExperimentComponent,
+
+        AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         {
           path: 'register',
           component:RegisterComponent
+        },
+        {
+          path: 'admin',
+          component: AdminComponent
         },
         {
           path: '',
