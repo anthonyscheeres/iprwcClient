@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ServerModel } from '../models/ServerModel';
 import { loadProducts } from '../services/product';
 import { Router } from '@angular/router';
+import { CreateExperimentComponent } from '../create-experiment/create-experiment.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +13,8 @@ import { Router } from '@angular/router';
 export class ProductsComponent implements OnInit {
   static currentlySelectedProduct;
   dataSource = loadProducts();
-  constructor(private _router: Router) { }
+
+  constructor(private _router: Router,  private modalService: NgbModal) { }
 
   ngOnInit() {
   }

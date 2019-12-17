@@ -4,8 +4,7 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\change-product-img",
-    "\\src\\app\\create-experiment",
-    "\\src\\app\\services"
+    "\\src\\app\\products"
   ],
   "SelectedNode": "\\src\\app\\change-product-img\\change-product-img.component.ts",
   "PreviewInSolutionExplorer": false
