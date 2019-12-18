@@ -12,25 +12,28 @@ export class ShoppingCartComponent implements OnInit {
   dataFromServer: ProductModel[] = ShoppingCartModel.products;
   static currentSelected: any = null;
   private selected: ProductModel;
-
+  totalSum: number = this.sum() 
   constructor(private _router: Router) { }
 
   ngOnInit() {
   }
   open(values) {
     var products: ProductModel[] = ShoppingCartModel.products
-    var filtered = products.filter(function (value) {
-
-      return !value === values;
-
-    });
-    console.log(filtered);
-    ShoppingCartModel.products = filtered
-
-
+   
   }
   setSelected(product: ProductModel) {
     this.selected = product;
 
   }
+
+  sum() {
+    var products: ProductModel[] = ShoppingCartModel.products
+    var total= 0
+    products.forEach(product => {
+      total = total + product.price
+    })
+    return total;
+  }
+
+
 }

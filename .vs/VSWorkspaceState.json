@@ -3,8 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\products"
+    "\\src\\app\\home",
+    "\\src\\app\\login",
+    "\\src\\app\\login-form",
+    "\\src\\app\\navigation-bar",
+    "\\src\\app\\register",
+    "\\src\\app\\shopping-cart",
+    "\\src\\app\\users"
   ],
-  "SelectedNode": "\\src\\app\\products\\products.component.css",
+  "SelectedNode": "\\src\\index.html",
   "PreviewInSolutionExplorer": false
 }

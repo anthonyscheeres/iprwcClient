@@ -42,6 +42,7 @@ import { AdminComponent } from './admin/admin.component';
     ShoppingCartComponent,
     ChangeProductImgComponent,
     CreateExperimentComponent,
+    ChangeProductImgComponent,
 
         AdminComponent
   ],
