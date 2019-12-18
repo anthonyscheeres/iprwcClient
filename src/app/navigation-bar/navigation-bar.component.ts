@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountModel } from '../models/AccountModel';
 import { Router } from '@angular/router';
+import { DragContainer } from '../models/DragContainer';
+import { ShoppingCartModel } from '../models/ShoppingCartModel';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -19,5 +21,17 @@ export class NavigationBarComponent implements OnInit {
     localStorage.setItem("token", null)
     this._router.navigate(['/']);
   }
+  allowDrop(ev) {
+    ev.preventDefault();
+  }
 
+ 
+
+  drop(ev) {
+    ev.preventDefault();
+
+    var value = DragContainer.product
+    
+    ShoppingCartModel.products.push(value)
+  }
 }

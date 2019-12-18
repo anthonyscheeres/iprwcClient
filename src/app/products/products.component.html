@@ -26,13 +26,7 @@
            
 
 
-            <td
-              dnd-draggable="item"
-              dnd-moved="list.splice($index, 1)"
-              dnd-effect-allowed="move"
-              dnd-selected="selected = item"
-              ng-class="{'selected': selected === item}"
-              draggable="true">{{ value.name_p }}
+            <td draggable="true"(dragstart)="drag($event, value)" >{{ value.name_p }}
             </td>
             <td>{{ value.price }}</td>
             <td><button class="btn btn-lg btn-outline-primary" (click)="open(value)">add to cart</button></td>

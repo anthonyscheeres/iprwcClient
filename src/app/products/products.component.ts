@@ -8,6 +8,7 @@ import { getUsers } from '../services/user';
 import { ProductModel } from '../models/ProductModel';
 import { HttpClient } from "@angular/common/http";
 import { ShoppingCartModel } from '../models/ShoppingCartModel';
+import { DragContainer } from '../models/DragContainer';
 
 @Component({
   selector: 'app-products',
@@ -22,7 +23,9 @@ export class ProductsComponent implements OnInit {
 
 
   constructor(private _router: Router, private modalService: NgbModal, private http: HttpClient) { }
-
+  drag(ev, value) {
+    DragContainer.product = value;
+  }
   async ngOnInit() {
     AccountModel.token = localStorage.getItem("token")
    
