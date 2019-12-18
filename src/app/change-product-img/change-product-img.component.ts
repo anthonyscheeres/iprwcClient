@@ -34,6 +34,11 @@ export class ChangeProductImgComponent implements OnInit {
       )
   }
 
+  setSelected(user: ProductModel) {
+    this.selected = user;
+
+  }
+
   fileChange(event, product: ProductModel) {
     var target = event.target
     let fileList: FileList = target.files;
