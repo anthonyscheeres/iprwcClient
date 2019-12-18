@@ -2,15 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app",
-    "\\src\\app\\home",
-    "\\src\\app\\login",
-    "\\src\\app\\login-form",
-    "\\src\\app\\navigation-bar",
-    "\\src\\app\\register",
-    "\\src\\app\\shopping-cart",
-    "\\src\\app\\users"
+    "\\src\\app"
   ],
-  "SelectedNode": "\\src\\index.html",
+  "SelectedNode": "\\src\\app\\models",
   "PreviewInSolutionExplorer": false
 }

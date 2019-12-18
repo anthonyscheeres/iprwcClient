@@ -47,7 +47,7 @@ export function register(username, password, email) {
   var host = ServerModel.host;
   var port = ServerModel.port;
   var token = AccountModel.token
-  var urlToServer = "http://" + host + ":" + port + "/user/createUser";
+  var urlToServer = "http://" + host + ":" + port + "/user/create";
 
   var data = JSON.stringify({
     "username": username,
