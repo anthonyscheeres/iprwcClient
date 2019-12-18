@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ServerModel } from '../models/ServerModel';
 import { loadProducts, urlProduct } from '../services/product';
 import { Router } from '@angular/router';
-import { CreateExperimentComponent } from '../create-experiment/create-experiment.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AccountModel } from '../models/AccountModel';
 import { getUsers } from '../services/user';

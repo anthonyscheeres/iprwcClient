@@ -3,7 +3,9 @@ import { ServerModel } from '../models/ServerModel';
 import { AccountModel } from '../models/AccountModel';
 import { fetchJsonGet, fetchJsonPost } from './http';
 
+export function getProducts() {
 
+}
 
 export function urlProduct() {
   var host = ServerModel.host;
@@ -49,7 +51,7 @@ export function changeImg(img, id) {
     "img": img
   });
 
-
+  console.log(json)
 
 
 

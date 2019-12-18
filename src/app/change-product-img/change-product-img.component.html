@@ -13,10 +13,9 @@
         <td>{{ value.name_p }}</td>
         <td>{{ value.price }}</td>
         <td>
-          <form (submit)="changeImg($event, value)">
-            <input id="file-input" type="file" name="name" />
-            <input class="button" type="submit" value="Upload img">
-          </form>
+     
+            <input type="file" (change)="fileChange($event, value)" placeholder="Upload file" accept=".jpg, .png">
+    
         </td>
       </tr>
     </tbody>
