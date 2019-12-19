@@ -32,7 +32,6 @@ export class ProductsComponent implements OnInit {
     DragContainer.product = value;
   }
   async ngOnInit() {
-    AccountModel.token = localStorage.getItem("token")
    
     
     

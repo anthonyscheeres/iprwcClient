@@ -2,8 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app"
+    "\\src\\app",
+    "\\src\\app\\add-product",
+    "\\src\\app\\change-img-admin",
+    "\\src\\app\\change-product-img",
+    "\\src\\app\\models",
+    "\\src\\app\\users"
   ],
-  "SelectedNode": "\\src\\app\\products",
+  "SelectedNode": "\\src\\app\\add-product\\add-product.component.ts",
   "PreviewInSolutionExplorer": false
 }

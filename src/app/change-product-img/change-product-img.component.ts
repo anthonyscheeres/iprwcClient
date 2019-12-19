@@ -20,7 +20,7 @@ export class ChangeProductImgComponent implements OnInit {
   constructor(private _router: Router, private modalService: NgbModal, private http: HttpClient) { }
 
   async ngOnInit() {
-    AccountModel.token = localStorage.getItem("token")
+
     this.http.get<ProductModel[]>(
       urlProduct())
       .subscribe(
