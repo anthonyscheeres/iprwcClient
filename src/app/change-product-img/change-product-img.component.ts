@@ -29,7 +29,7 @@ export class ChangeProductImgComponent implements OnInit {
       .subscribe(
         responseData => {
           this.dataFromServer = responseData;
-          console.log(responseData);
+         // console.log(responseData);
         }
       )
   }
@@ -58,7 +58,7 @@ export class ChangeProductImgComponent implements OnInit {
     changeImg(reader.result, product.id);
   };
   reader.onerror = function (error) {
-    console.log('Error: ', error);
+   // console.log('Error: ', error);
   };
 }
 
