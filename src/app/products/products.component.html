@@ -23,7 +23,7 @@
           <tr class="row-12" *ngFor="let value of dataFromServer"
               (click)="setSelected(value)"
               [ngStyle]="{backgroundColor: selected == value ? '#F2F2F2': 'transparent'}">
-            <td class="col-md-2">   <img  class="rounded"  src="{{value.img}}" />
+            <td class="col-md-2">   <img   draggable="true" (dragstart)="drag($event, value)" class="rounded"  src="{{value.img}}" />
             </td >
             <td class="col-md-2" draggable="true" (dragstart)="drag($event, value)">
               {{ value.name_p }}
