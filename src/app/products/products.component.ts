@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { ServerModel } from '../models/ServerModel';
 import { loadProducts, urlProduct } from '../services/product';
 import { Router } from '@angular/router';
@@ -9,11 +9,16 @@ import { ProductModel } from '../models/ProductModel';
 import { HttpClient } from "@angular/common/http";
 import { ShoppingCartModel } from '../models/ShoppingCartModel';
 import { DragContainer } from '../models/DragContainer';
+import { Decode64Pipe } from '../models/Base64Pipe';
+
+
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
+ 
+
 })
 export class ProductsComponent implements OnInit {
   static currentlySelectedProduct;

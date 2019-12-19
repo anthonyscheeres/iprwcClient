@@ -21,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AdminComponent } from './admin/admin.component';
 import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.component';
+import { Decode64Pipe } from './models/Base64Pipe';
 
 
 
@@ -28,6 +29,7 @@ import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.com
 
 
 @NgModule({
+  exports: [Decode64Pipe],
   declarations: [
     AppComponent,
     AddProductComponent,
@@ -42,7 +44,7 @@ import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.com
     ShoppingCartComponent,
     ChangeProductImgComponent,
     ChangeProductImgComponent,
-
+    Decode64Pipe,
         AdminComponent,
 
         ChangeImgAdminComponent
