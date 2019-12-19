@@ -20,6 +20,7 @@ import { ChangeProductImgComponent } from './change-product-img/change-product-i
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AdminComponent } from './admin/admin.component';
+import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.component';
 
 
 
@@ -42,7 +43,9 @@ import { AdminComponent } from './admin/admin.component';
     ChangeProductImgComponent,
     ChangeProductImgComponent,
 
-        AdminComponent
+        AdminComponent,
+
+        ChangeImgAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,14 @@ import { AdminComponent } from './admin/admin.component';
           path: "cart",
           component: ShoppingCartComponent
 
+        }, {
+          path: "admin-img",
+          component: ChangeImgAdminComponent
+
         },
+
+        
+
 
         // otherwise redirect to home
         { path: '**', redirectTo: '' }

@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app"
+    "\\src\\app",
+    "\\src\\app\\admin",
+    "\\src\\app\\change-product-img"
   ],
-  "SelectedNode": "\\src\\app\\models",
+  "SelectedNode": "\\src\\app\\admin\\admin.component.html",
   "PreviewInSolutionExplorer": false
 }
