@@ -6,6 +6,13 @@
   width: 100%;
 }
 
+img {
+  width: 10ex;
+  height: 10ex;
+  border-radius: 80px;
+}
+
+
 .table-fixed tbody {
   height: 50vh;
   overflow-y: auto;

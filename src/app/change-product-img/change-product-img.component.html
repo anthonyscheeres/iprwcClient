@@ -2,7 +2,8 @@
 <div class="table-responsive table-striped">
   <table class="table">
     <thead>
-    <th class="col-4" scope="col">Name</th>
+      <th class="col-4" scope="col">Image</th>
+<th class="col-4" scope="col">Name</th>
     <th class="col-4" scope="col">Price</th>
     <th class="col-4" scope="col">Options</th>
     </thead>
@@ -11,12 +12,15 @@
       <tr class="row-12" *ngFor="let value of dataFromServer"
           (click)="setSelected(value)"
           [ngStyle]="{backgroundColor: selected == value ? '#F2F2F2': 'transparent'}">
+        <td class="col-md-2">
+          <img class="rounded" src="{{value.img}}" />
+        </td>
         <td>{{ value.name_p }}</td>
         <td>{{ value.price }}</td>
         <td>
-     
-            <input type="file" (change)="fileChange($event, value)" placeholder="Upload file" accept=".jpg">
-    
+
+          <input type="file" (change)="fileChange($event, value)" placeholder="Upload file" accept=".jpg">
+
         </td>
       </tr>
     </tbody>

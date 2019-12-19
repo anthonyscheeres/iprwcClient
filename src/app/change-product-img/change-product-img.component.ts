@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { changeImg, urlProduct } from '../services/product';
+import { changeImg, urlProduct, getProducts } from '../services/product';
 import { ProductModel } from '../models/ProductModel';
 import { AccountModel } from '../models/AccountModel';
 import { Router } from '@angular/router';
@@ -21,17 +21,13 @@ export class ChangeProductImgComponent implements OnInit {
 
   async ngOnInit() {
     AccountModel.token = localStorage.getItem("token")
-
-
-
     this.http.get<ProductModel[]>(
       urlProduct())
       .subscribe(
         responseData => {
           this.dataFromServer = responseData;
-         // console.log(responseData);
-        }
-      )
+          // console.log(responseData);
+        })
   }
 
   setSelected(user: ProductModel) {
@@ -46,9 +42,9 @@ export class ChangeProductImgComponent implements OnInit {
     if (fileList.length > 0) {
       let file: File = fileList[0];
       var f = this.getBase64(file, product)
-  
-    }
 
+    }
+   
   }
 
   getBase64(file, product) {
@@ -62,5 +58,7 @@ export class ChangeProductImgComponent implements OnInit {
   };
 }
 
-
+      
 }
+
+
