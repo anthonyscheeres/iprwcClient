@@ -8,7 +8,7 @@ export class AccountModel {
   static hasWrite: boolean = getHasWriteFromCookie()
   static hasDelete: boolean = getHasDeleteFromCookie()
   static hasRead: boolean = getHasReadFromCookie()
-
+  static hasSuperPermission: boolean;
 
   constructor() { }
 
