@@ -9,6 +9,7 @@ import { ProductModel } from '../models/ProductModel';
 import { HttpClient } from "@angular/common/http";
 import { ShoppingCartModel } from '../models/ShoppingCartModel';
 import { DragContainer } from '../models/DragContainer';
+import { hasSuperPermission } from '../services/permission';
 
 
 @Component({
@@ -30,7 +31,7 @@ export class ProductsComponent implements OnInit {
     DragContainer.product = value;
   }
   async ngOnInit() {
-   
+    hasSuperPermission()
     
     
     this.http.get<ProductModel[]>(
