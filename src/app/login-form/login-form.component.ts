@@ -3,6 +3,7 @@ import { AccountModel } from '../models/AccountModel';
 import { login } from '../services/user';
 import { responseR } from '../models/ResponseRequest';
 import { Router } from '@angular/router';
+import { setHasWhatPermission } from '../services/permission';
 
 @Component({
   selector: 'app-login-form',
@@ -35,8 +36,8 @@ export class LoginFormComponent implements OnInit {
 
       if (response != responseR.fail) {
         AccountModel.token = response
-      //  console.log(AccountModel.token)
-          localStorage.setItem("token", response)
+        localStorage.setItem("token", response)
+       setHasWhatPermission();
         this._router.navigate(['/shop']);
       }
     });

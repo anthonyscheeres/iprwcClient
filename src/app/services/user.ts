@@ -5,7 +5,9 @@ import { AccountModel } from '../models/AccountModel';
 import { fetchJsonPost, fetchJsonGet } from './http';
 import { UserModel } from '../models/UserModel';
 
+export function fetchPost(url) {
 
+}
 
 
 export function loadUsers() {

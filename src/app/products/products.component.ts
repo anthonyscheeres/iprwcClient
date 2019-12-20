@@ -9,8 +9,6 @@ import { ProductModel } from '../models/ProductModel';
 import { HttpClient } from "@angular/common/http";
 import { ShoppingCartModel } from '../models/ShoppingCartModel';
 import { DragContainer } from '../models/DragContainer';
-import { Decode64Pipe } from '../models/Base64Pipe';
-
 
 
 @Component({

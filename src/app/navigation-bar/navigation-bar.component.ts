@@ -3,6 +3,7 @@ import { AccountModel } from '../models/AccountModel';
 import { Router } from '@angular/router';
 import { DragContainer } from '../models/DragContainer';
 import { ShoppingCartModel } from '../models/ShoppingCartModel';
+import { hasSuperPermission } from '../services/permission';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -10,15 +11,13 @@ import { ShoppingCartModel } from '../models/ShoppingCartModel';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-
+  condition = hasSuperPermission() 
   constructor(private _router: Router) { }
 
   ngOnInit() {
   }
   logOut() {
-    AccountModel.token = null
-  
-    localStorage.setItem("token", null)
+    logOut()
     this._router.navigate(['/']);
   }
   allowDrop(ev) {
