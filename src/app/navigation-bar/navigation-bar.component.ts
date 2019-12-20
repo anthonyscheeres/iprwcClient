@@ -3,7 +3,7 @@ import { AccountModel } from '../models/AccountModel';
 import { Router } from '@angular/router';
 import { DragContainer } from '../models/DragContainer';
 import { ShoppingCartModel } from '../models/ShoppingCartModel';
-import { hasSuperPermission } from '../services/permission';
+import { hasSuperPermission, logOut } from '../services/permission';
 
 @Component({
   selector: 'app-navigation-bar',
