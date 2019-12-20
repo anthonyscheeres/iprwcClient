@@ -44,29 +44,44 @@ export function hasRead() {
 export async function setHasRead() {
   var variable = "hasRead"
   await hasRead().then(response => {
-    localStorage.setItem(variable, response)
+
     if (response.toLocaleLowerCase() === "true") {
-      AccountModel.hasRead = true
+
+      localStorage.setItem(variable, response);
+      return AccountModel.hasRead = true;
     }
+
+    localStorage.setItem(variable, "false");
+    AccountModel.hasRead = false;
   })
 }
 
 export async function setHasWrite() {
   var variable = "hasWrite"
   await hasWrite().then(response => {
-    localStorage.setItem(variable, response)
+
     if (response.toLocaleLowerCase() === "true") {
-      AccountModel.hasWrite = true
+
+      localStorage.setItem(variable, response)
+      return AccountModel.hasWrite = true
     }
+
+    localStorage.setItem(variable, "false")
+    AccountModel.hasWrite = false
   })
 }
 export async function setHasDelete() {
   var variable = "hasDelete"
   await hasDelete().then(response => {
-    localStorage.setItem(variable, response)
+
     if (response.toLocaleLowerCase() === "true") {
-      AccountModel.hasDelete = true
-      }
+
+      localStorage.setItem(variable, response)
+      return AccountModel.hasDelete = true
+    }
+
+    localStorage.setItem(variable, "false")
+    AccountModel.hasDelete = false
   })
 
   
@@ -122,9 +137,28 @@ export async function setHasWhatPermission() {
 }
 
 export function hasSuperPermission() {
-  var result = AccountModel.hasDelete && AccountModel.hasRead && AccountModel.hasWrite
-  AccountModel.hasSuperPermission = result;
+  var result = false;
+  var delet = AccountModel.hasDelete;
+  var read = AccountModel.hasRead;
+  var write = AccountModel.hasWrite;
+
+  console.log(delet)
+  console.log(read)
+  console.log(write)
+  var result = delet && read && write
+  var val;
+  console.log("hasSuperPermission" +result)
+
+  if (val == null || val === false) {
+    localStorage.setItem("hasSuperPermission", "false")
+    AccountModel.hasSuperPermission = false;
+  }
+
+  if (!result) {
+
+  }
   localStorage.setItem("hasSuperPermission", result.toString())
+  AccountModel.hasSuperPermission = result;
   return result
 }
 
