@@ -9,9 +9,20 @@ export function getHasReadFromCookie() {
   return false
 }
 
+export function getHasAdminFromCookie() {
+  var boolean = localStorage.getItem("hasSuperPermission")
+  console.log(boolean)
+  if (boolean = "true") {
+    return true
+  }
+
+  return false
+}
+
+
 export function getHasWriteFromCookie() {
   var boolean = localStorage.getItem("hasWrite")
- 
+  console.log(boolean)
   if (boolean="true") {
     return true
   }

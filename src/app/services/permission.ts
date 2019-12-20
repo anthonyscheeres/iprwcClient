@@ -80,6 +80,11 @@ export function logOut() {
   nullHasRead()
 }
 
+export function nullHasSuperPermission() {
+  AccountModel.hasSuperPermission = null
+
+  localStorage.setItem("hasSuperPermission", null)
+}
 
 export function nullToken() {
   AccountModel.token = null
@@ -117,11 +122,9 @@ export async function setHasWhatPermission() {
 }
 
 export function hasSuperPermission() {
-
-
-
   var result = AccountModel.hasDelete && AccountModel.hasRead && AccountModel.hasWrite
-  console.log(result)
+  AccountModel.hasSuperPermission = result;
+  localStorage.setItem("hasSuperPermission", result.toString())
   return result
 }
 
