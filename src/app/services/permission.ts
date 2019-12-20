@@ -117,6 +117,11 @@ export async function setHasWhatPermission() {
 }
 
 export function hasSuperPermission() {
-  return AccountModel.hasDelete && AccountModel.hasRead && AccountModel.hasWrite
+
+
+
+  var result = AccountModel.hasDelete && AccountModel.hasRead && AccountModel.hasWrite
+  console.log(result)
+  return result
 }
 
