@@ -12,17 +12,17 @@ import { IsSuperUserObserverable } from '../models/isSuperUserObserverable';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-  condition  //AccountModel.hasSuperPermission
+  condition1 = false
 
   constructor(private _router: Router) { }
 
   ngOnInit() {
      IsSuperUserObserverable.isAuthenticatedObs
       
-      .subscribe(
+/*      .subscribe(
         value => {
-          this.condition = value;
-        });
+          this.condition1 = value;
+        });*/
   }
   logOut() {
     logOut()
