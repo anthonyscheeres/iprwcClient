@@ -157,7 +157,7 @@ export function hasSuperPermission() {
   if (!result) {
 
   }
-  localStorage.setItem("hasSuperPermission", result.toString())
+  localStorage.setItem("hasSuperPermission", "true")
   AccountModel.hasSuperPermission = result;
   return result
 }
