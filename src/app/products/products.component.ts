@@ -3,7 +3,6 @@ import { ServerModel } from '../models/ServerModel';
 import { loadProducts, urlProduct } from '../services/product';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AccountModel } from '../models/AccountModel';
 import { getUsers } from '../services/user';
 import { ProductModel } from '../models/ProductModel';
 import { HttpClient } from "@angular/common/http";

@@ -1,17 +1,17 @@
 
 import { ServerModel } from '../models/ServerModel';
 import { responseR } from '../models/ResponseRequest';
-import { AccountModel } from '../models/AccountModel';
 import { fetchJsonPost, fetchJsonGet } from './http';
 import { UserModel } from '../models/UserModel';
 import { ProtocolR } from '../models/Protocol';
+import { DataModel } from '../models/DataModel';
 
 
 
 export function loadUsers() {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token;
+  var token = DataModel.account.token;
   var url = "http://" + host + ":" + port + "/user/show";
   return url
 }
@@ -21,7 +21,7 @@ export function loadUsers() {
 export function login(username, password) {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token
+  var token = DataModel.account.token
   var url = "http://" + host + ":" + port + "/user/login";
 
   var data = JSON.stringify({
@@ -46,7 +46,7 @@ export function login(username, password) {
 export function register(username, password, email) {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token
+  var token = DataModel.account.token
   var urlToServer = "http://" + host + ":" + port + "/user/create";
 
   var data = JSON.stringify({
@@ -65,7 +65,7 @@ export function register(username, password, email) {
 export function getUsers() {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token
+  var token = DataModel.account.token
   var url = "http://" + host + ":" + port + "/user/" + token + "/showAllUsers";
 
 
@@ -77,7 +77,7 @@ export function getUsers() {
 export function deleteUser(user) {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token
+  var token = DataModel.account.token
   var urlToServer = "http://" + host + ":" + port + "/user/" + token + "/remove";
 
  // console.log("username:"+user)
@@ -96,7 +96,7 @@ export function deleteUser(user) {
 export function giveRead(user) {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token
+  var token = DataModel.account.token
   var urlToServer = "http://" + host + ":" + port + "/user/" + token + "/read";
 
   var data = JSON.stringify({
@@ -114,7 +114,7 @@ export function giveRead(user) {
 export function giveWrite(user) {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token
+  var token = DataModel.account.token
   var urlToServer = "http://" + host + ":" + port + "/user/" + token + "/write";
 
   var data = JSON.stringify({
@@ -132,7 +132,7 @@ export function giveWrite(user) {
 export function giveDelete(user) {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token
+  var token = DataModel.account.token
   var urlToServer = "http://" + host + ":" + port + "/user/"+token +"/delete";
 
   var data = JSON.stringify({

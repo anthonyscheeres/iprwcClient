@@ -1,9 +1,9 @@
 
 import { ServerModel } from '../models/ServerModel';
-import { AccountModel } from '../models/AccountModel';
 import { fetchJsonGet, fetchJsonPost } from './http';
 import { ProtocolR } from '../models/Protocol';
 import { ProductModel } from '../models/ProductModel';
+import { DataModel } from '../models/DataModel';
 
 
 export function urlProduct() {
@@ -22,7 +22,7 @@ export function loadProducts() {
 export function deleteProductById(product: ProductModel ) {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token
+  var token = DataModel.account.token
   var urlToServer = "http://" + host + ":" + port + "/product/" + token + "/remove";
   var id = product.id;
   var data = JSON.stringify({
@@ -38,7 +38,7 @@ export function deleteProductById(product: ProductModel ) {
 export function insertProduct(name, price) {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token;
+  var token = DataModel.account.token;
   var url = "http://" + host + ":" + port + "/product/"+ token + "/create";
   var json = JSON.stringify({
     "name_p": name,
@@ -56,7 +56,7 @@ export function insertProduct(name, price) {
 export function changeImg(img, id) {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token;
+  var token = DataModel.account.token;
   var url = "http://" + host + ":" + port + "/product/" + token + "/changeImg ";
   var json = JSON.stringify({
     "id": id,

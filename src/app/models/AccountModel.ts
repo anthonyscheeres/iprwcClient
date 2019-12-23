@@ -4,11 +4,11 @@ import { getHasWriteFromCookie, getHasDeleteFromCookie, getHasReadFromCookie, ge
 export class AccountModel {
 
 
-  static token: String = localStorage.getItem("token");
-  static hasWrite = getHasWriteFromCookie()
-  static hasDelete = getHasDeleteFromCookie()
-  static hasRead = getHasReadFromCookie()
-  static hasSuperPermission: boolean = getHasAdminFromCookie()
+  token: String = localStorage.getItem("token");
+  hasWrite = getHasWriteFromCookie()
+  hasDelete = getHasDeleteFromCookie()
+  hasRead = getHasReadFromCookie()
+  hasSuperPermission: boolean = getHasAdminFromCookie()
   constructor() { }
 
 }

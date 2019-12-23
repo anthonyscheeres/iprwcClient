@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountModel } from '../models/AccountModel';
 import { Router } from '@angular/router';
 import { DragContainer } from '../models/DragContainer';
 import { ShoppingCartModel } from '../models/ShoppingCartModel';
 import { hasSuperPermission, logOut } from '../services/permission';
 import { Subscription, interval } from 'rxjs';
+import { DataModel } from '../models/DataModel';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -12,7 +12,7 @@ import { Subscription, interval } from 'rxjs';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-  condition1 = AccountModel.hasSuperPermission
+  condition1 = DataModel.account.hasSuperPermission
 
 
   mySubscription: Subscription
@@ -29,8 +29,8 @@ export class NavigationBarComponent implements OnInit {
   }
 
   checkCurrentPermission() {
-    this.condition1 = !AccountModel.hasSuperPermission;
-    console.log(AccountModel.hasSuperPermission)
+    this.condition1 = !DataModel.account.hasSuperPermission;
+ //   console.log(DataModel.account.hasSuperPermission)
   }
 
 

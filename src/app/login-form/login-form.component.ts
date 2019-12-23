@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { AccountModel } from '../models/AccountModel';
 import { login } from '../services/user';
 import { responseR } from '../models/ResponseRequest';
 import { Router } from '@angular/router';
 import { setHasWhatPermission } from '../services/permission';
+import { DataModel } from '../models/DataModel';
 
 @Component({
   selector: 'app-login-form',
@@ -35,7 +35,7 @@ export class LoginFormComponent implements OnInit {
     await login(username, password).then(response => {
 
       if (response != responseR.fail) {
-        AccountModel.token = response
+        DataModel.account.token = response
         localStorage.setItem("token", response)
        setHasWhatPermission();
         this._router.navigate(['/shop']);

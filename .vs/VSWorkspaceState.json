@@ -3,12 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\add-product",
-    "\\src\\app\\change-img-admin",
-    "\\src\\app\\change-product-img",
-    "\\src\\app\\models",
-    "\\src\\app\\users"
+    "\\src\\app\\navigation-bar",
+    "\\src\\app\\services",
+    "\\src\\app\\shopping-cart"
   ],
-  "SelectedNode": "\\src\\app\\add-product\\add-product.component.ts",
+  "SelectedNode": "\\src\\app\\navigation-bar\\navigation-bar.component.ts",
   "PreviewInSolutionExplorer": false
 }

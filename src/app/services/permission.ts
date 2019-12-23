@@ -1,11 +1,11 @@
 import { fetchJsonPost, fetchPost } from './http';
 import { ServerModel } from '../models/ServerModel';
-import { AccountModel } from '../models/AccountModel';
+import { DataModel } from '../models/DataModel';
 
 export function hasDelete() {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token
+  var token = DataModel.account.token
   var url = "http://" + host + ":" + port + "/user/" + token + "/hasDelete";
   var data = null
 
@@ -18,7 +18,7 @@ export function hasDelete() {
 export function hasWrite() {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token
+  var token = DataModel.account.token
   var url = "http://" + host + ":" + port + "/user/" + token + "/hasWrite";
 
 
@@ -32,7 +32,7 @@ export function hasWrite() {
 export function hasRead() {
   var host = ServerModel.host;
   var port = ServerModel.port;
-  var token = AccountModel.token
+  var token = DataModel.account.token
   var url = "http://" + host + ":" + port + "/user/"+ token+"/hasRead";
 
 
@@ -48,11 +48,11 @@ export async function setHasRead() {
     if (response.toLocaleLowerCase() === "true") {
 
       localStorage.setItem(variable, response);
-      return AccountModel.hasRead = true;
+      return DataModel.account.hasRead = true;
     }
 
     localStorage.setItem(variable, "false");
-    AccountModel.hasRead = false;
+    DataModel.account.hasRead = false;
   })
 }
 
@@ -63,11 +63,11 @@ export async function setHasWrite() {
     if (response.toLocaleLowerCase() === "true") {
 
       localStorage.setItem(variable, response)
-      return AccountModel.hasWrite = true
+      return DataModel.account.hasWrite = true
     }
 
     localStorage.setItem(variable, "false")
-    AccountModel.hasWrite = false
+    DataModel.account.hasWrite = false
   })
 }
 export async function setHasDelete() {
@@ -77,11 +77,11 @@ export async function setHasDelete() {
     if (response.toLocaleLowerCase() === "true") {
 
       localStorage.setItem(variable, response)
-      return AccountModel.hasDelete = true
+      return DataModel.account.hasDelete = true
     }
 
     localStorage.setItem(variable, "false")
-    AccountModel.hasDelete = false
+    DataModel.account.hasDelete = false
   })
 
   
@@ -89,6 +89,7 @@ export async function setHasDelete() {
 }
 
 export function logOut() {
+  
   nullToken()
   nullHasWrite()
   nullHasDelete()
@@ -97,35 +98,35 @@ export function logOut() {
 }
 
 export async function nullHasSuperPermission() {
-  AccountModel.hasSuperPermission = false
+  DataModel.account.hasSuperPermission = null
 
-  localStorage.setItem("hasSuperPermission", "false")
+  localStorage.setItem("hasSuperPermission", null)
 }
 
 export async function nullToken() {
-  AccountModel.token = "TOKEN"
+  DataModel.account.token = null
 
-  localStorage.setItem("token", "TOKEN")
+  localStorage.setItem("token", null)
 }
 
 
 
 export async function nullHasWrite() {
-  AccountModel.hasWrite = false
+  DataModel.account.hasWrite = null
 
-  localStorage.setItem("hasWrite", "false")
+  localStorage.setItem("hasWrite", null)
 }
 
 export async function nullHasDelete() {
-  AccountModel.hasDelete = false
+  DataModel.account.hasDelete = false
 
-  localStorage.setItem("hasDelete", "false")
+  localStorage.setItem("hasDelete", null)
 }
 
 export async function nullHasRead() {
-  AccountModel.hasRead = false
+  DataModel.account.hasRead = false
 
-  localStorage.setItem("hasRead", "false")
+  localStorage.setItem("hasRead", null)
 }
 
 
@@ -139,9 +140,9 @@ export async function setHasWhatPermission() {
 
 export function hasSuperPermission() {
   var result = false;
-  var delet = AccountModel.hasDelete;
-  var read = AccountModel.hasRead;
-  var write = AccountModel.hasWrite;
+  var delet = DataModel.account.hasDelete;
+  var read = DataModel.account.hasRead;
+  var write = DataModel.account.hasWrite;
 
   console.log(delet)
   console.log(read)
@@ -152,14 +153,14 @@ export function hasSuperPermission() {
 
   if (val == null || val === false) {
     localStorage.setItem("hasSuperPermission", "false")
-    AccountModel.hasSuperPermission = false;
+    DataModel.account.hasSuperPermission = false;
   }
 
   if (!result) {
 
   }
   localStorage.setItem("hasSuperPermission", "true")
-  AccountModel.hasSuperPermission = result;
+  DataModel.account.hasSuperPermission = result;
   return result
 }
 
