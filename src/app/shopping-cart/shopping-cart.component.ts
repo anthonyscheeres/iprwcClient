@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductModel } from '../models/ProductModel';
 import { ShoppingCartModel } from '../models/ShoppingCartModel';
+import { removeObjectFromCart, sumProductsInCart } from '../services/cart';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -12,14 +14,26 @@ export class ShoppingCartComponent implements OnInit {
   dataFromServer: ProductModel[] = ShoppingCartModel.products;
   static currentSelected: any = null;
   private selected: ProductModel;
-  totalSum: number = this.sum() 
+  totalSum: number = this.sum()
+  mySubscription: Subscription
+
+  doStuff() {
+    this.checkCurrentTotal();
+  }
   constructor(private _router: Router) { }
 
-  ngOnInit() {
+  checkCurrentTotal() {
+    this.totalSum = this.sum()
   }
-  open(values) {
-    var products: ProductModel[] = ShoppingCartModel.products
-   
+
+  ngOnInit() {
+    var time = 500
+    this.mySubscription = interval(time).subscribe((x => {
+      this.doStuff();
+    }));
+  }
+  open(product) {
+    removeObjectFromCart(product)
   }
   setSelected(product: ProductModel) {
     this.selected = product;
@@ -27,12 +41,7 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   sum() {
-    var products: ProductModel[] = ShoppingCartModel.products
-    var total= 0
-    products.forEach(product => {
-      total = total + product.price
-    })
-    return total;
+    return sumProductsInCart()
   }
 
 

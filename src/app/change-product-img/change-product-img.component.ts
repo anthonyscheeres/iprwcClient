@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { changeImg, urlProduct, getProducts } from '../services/product';
+import { changeImg, urlProduct, deleteProductById } from '../services/product';
 import { ProductModel } from '../models/ProductModel';
-import { AccountModel } from '../models/AccountModel';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient } from "@angular/common/http";
-import { Observable } from 'rxjs';
 import { ProductsModel } from '../models/ProductsModel';
 
 @Component({
@@ -22,6 +20,11 @@ export class ChangeProductImgComponent implements OnInit {
 
   async ngOnInit() {
 
+    this.loadProducts()
+  }
+
+  loadProducts() {
+
     this.http.get<ProductModel[]>(
       urlProduct())
       .subscribe(
@@ -30,6 +33,7 @@ export class ChangeProductImgComponent implements OnInit {
           ProductsModel.products = responseData
         })
   }
+
 
   setSelected(user: ProductModel) {
     this.selected = user;
@@ -44,6 +48,7 @@ export class ChangeProductImgComponent implements OnInit {
       let file: File = fileList[0];
       var f = this.getBase64(file, product)
 
+      this.loadProducts()
     }
    
   }
@@ -58,6 +63,12 @@ export class ChangeProductImgComponent implements OnInit {
    // console.log('Error: ', error);
   };
 }
+
+  open(value) {
+    deleteProductById(value);
+
+    this.loadProducts()
+  }
 
       
 }

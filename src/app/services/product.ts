@@ -2,10 +2,9 @@
 import { ServerModel } from '../models/ServerModel';
 import { AccountModel } from '../models/AccountModel';
 import { fetchJsonGet, fetchJsonPost } from './http';
+import { ProtocolR } from '../models/Protocol';
+import { ProductModel } from '../models/ProductModel';
 
-export function getProducts() {
-
-}
 
 export function urlProduct() {
   var host = ServerModel.host;
@@ -20,6 +19,19 @@ export function loadProducts() {
   return fetchJsonGet(url);
 }
 
+export function deleteProductById(product: ProductModel ) {
+  var host = ServerModel.host;
+  var port = ServerModel.port;
+  var token = AccountModel.token
+  var urlToServer = "http://" + host + ":" + port + "/product/" + token + "/remove";
+  var id = product.id;
+  var data = JSON.stringify({
+    "id": id
+  });
+
+
+  return fetchJsonPost(urlToServer, data.toString(), ProtocolR.DELETE)
+}
 
 
 
@@ -38,7 +50,7 @@ export function insertProduct(name, price) {
 
 
 
-  return fetchJsonPost(url, json);
+  return fetchJsonPost(url, json, ProtocolR.POST);
 }
 
 export function changeImg(img, id) {
@@ -56,6 +68,6 @@ export function changeImg(img, id) {
 
 
 
-  return fetchJsonPost(url, json);
+  return fetchJsonPost(url, json, ProtocolR.POST);
 }
 

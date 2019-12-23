@@ -4,6 +4,7 @@ import { responseR } from '../models/ResponseRequest';
 import { AccountModel } from '../models/AccountModel';
 import { fetchJsonPost, fetchJsonGet } from './http';
 import { UserModel } from '../models/UserModel';
+import { ProtocolR } from '../models/Protocol';
 
 
 
@@ -34,7 +35,7 @@ export function login(username, password) {
 
 
 
-  return fetchJsonPost(url, data.toString());
+  return fetchJsonPost(url, data.toString(), ProtocolR.POST);
 
 
 
@@ -57,7 +58,7 @@ export function register(username, password, email) {
   });
 
 
-  return fetchJsonPost(urlToServer, data.toString())
+  return fetchJsonPost(urlToServer, data.toString(), ProtocolR.POST)
 
 }
 
@@ -79,7 +80,7 @@ export function deleteUser(user) {
   var token = AccountModel.token
   var urlToServer = "http://" + host + ":" + port + "/user/" + token + "/remove";
 
-  console.log("username:"+user)
+ // console.log("username:"+user)
   var data = JSON.stringify({
     "username": user,
     "password": null,
@@ -89,7 +90,7 @@ export function deleteUser(user) {
   });
 
 
-  return fetchJsonPost(urlToServer, data.toString())
+  return fetchJsonPost(urlToServer, data.toString(), ProtocolR.DELETE)
 }
 
 export function giveRead(user) {
@@ -107,7 +108,7 @@ export function giveRead(user) {
   });
 
 
-  return fetchJsonPost(urlToServer, data.toString())
+  return fetchJsonPost(urlToServer, data.toString(), ProtocolR.POST)
 }
 
 export function giveWrite(user) {
@@ -125,7 +126,7 @@ export function giveWrite(user) {
   });
 
 
-  return fetchJsonPost(urlToServer, data.toString())
+  return fetchJsonPost(urlToServer, data.toString(), ProtocolR.POST)
 }
 
 export function giveDelete(user) {
@@ -143,5 +144,5 @@ export function giveDelete(user) {
   });
 
 
-  return fetchJsonPost(urlToServer, data.toString())
+  return fetchJsonPost(urlToServer, data.toString(), ProtocolR.POST)
 }
