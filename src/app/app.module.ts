@@ -15,13 +15,14 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ChangeProductImgComponent } from './change-product-img/change-product-img.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AdminComponent } from './admin/admin.component';
 import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
+
+
 
 
 
@@ -29,8 +30,6 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 @NgModule({
 
   declarations: [
-    ProductDetailsComponent,
-   
     AppComponent,
     AddProductComponent,
     LoginComponent,
@@ -45,26 +44,20 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ChangeProductImgComponent,
     ChangeProductImgComponent,
 
-        AdminComponent,
+    AdminComponent,
 
-        ChangeImgAdminComponent,
-
-        ProductDetailsComponent
-  ],
-  exports: [
-    ProductDetailsComponent
+    ChangeImgAdminComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,  // add  this
     NgbModule,
     AppRoutingModule,
     RouterModule.forRoot(
       [
         {
           path: 'register',
-          component:RegisterComponent
+          component: RegisterComponent
         },
         {
           path: 'admin',
@@ -72,7 +65,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
         },
         {
           path: '',
-          component:HomeComponent
+          component: HomeComponent
         },
         {
           path: "login",
@@ -97,7 +90,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 
         },
 
-        
+
 
 
         // otherwise redirect to home
@@ -110,10 +103,6 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
   providers: [{
     provide: LocationStrategy, useClass: HashLocationStrategy
   }],
-  bootstrap: [AppComponent],
-  entryComponents: [ProductDetailsComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-export class NgbdModalBasicModule {}

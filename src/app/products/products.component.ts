@@ -10,7 +10,6 @@ import { ShoppingCartModel } from '../models/ShoppingCartModel';
 import { DragContainer } from '../models/DragContainer';
 import { hasSuperPermission } from '../services/permission';
 import { ProductsModel } from '../models/ProductsModel';
-import { ProductDetailsComponent } from '../product-details/product-details.component';
 
 
 @Component({
@@ -47,8 +46,7 @@ export class ProductsComponent implements OnInit {
   }
 
   click(value) {
-    console.log("yes?")
-    const modalRef = this.modalService.open(ProductDetailsComponent)
+ 
   }
 
 
