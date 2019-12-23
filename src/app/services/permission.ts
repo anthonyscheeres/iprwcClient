@@ -93,6 +93,7 @@ export function logOut() {
   nullHasWrite()
   nullHasDelete()
   nullHasRead()
+  nullHasSuperPermission() 
 }
 
 export function nullHasSuperPermission() {

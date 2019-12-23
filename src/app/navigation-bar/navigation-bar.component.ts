@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { DragContainer } from '../models/DragContainer';
 import { ShoppingCartModel } from '../models/ShoppingCartModel';
 import { hasSuperPermission, logOut } from '../services/permission';
-import { IsSuperUserObserverable } from '../models/isSuperUserObserverable';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -17,12 +16,7 @@ export class NavigationBarComponent implements OnInit {
   constructor(private _router: Router) { }
 
   ngOnInit() {
-     IsSuperUserObserverable.isAuthenticatedObs
-      
-/*      .subscribe(
-        value => {
-          this.condition1 = value;
-        });*/
+   this.condition1 = AccountModel.hasSuperPermission;
   }
   logOut() {
     logOut()
