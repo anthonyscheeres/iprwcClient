@@ -1,0 +1,16 @@
+
+
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <img src="{{product.img}}">
+    <h3>{{product.name_p}}</h3>
+    <p>{{product.price}}<p>
+      <button class="btn btn-lg btn-outline-primary" (click)="open(value)">add to cart</button>
+
+
+
+  </div>

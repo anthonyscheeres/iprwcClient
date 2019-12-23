@@ -1,8 +1,8 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { ServerModel } from '../models/ServerModel';
-import { loadProducts, urlProduct } from '../services/product';
+import { loadProducts, urlProduct, addProduct } from '../services/product';
 import { Router } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { getUsers } from '../services/user';
 import { ProductModel } from '../models/ProductModel';
 import { HttpClient } from "@angular/common/http";
@@ -10,6 +10,7 @@ import { ShoppingCartModel } from '../models/ShoppingCartModel';
 import { DragContainer } from '../models/DragContainer';
 import { hasSuperPermission } from '../services/permission';
 import { ProductsModel } from '../models/ProductsModel';
+import { ProductDetailsComponent } from '../product-details/product-details.component';
 
 
 @Component({
@@ -45,11 +46,14 @@ export class ProductsComponent implements OnInit {
       )
   }
 
-
+  click(value) {
+    console.log("yes?")
+    const modalRef = this.modalService.open(ProductDetailsComponent)
+  }
 
 
   open(value) {
-    ShoppingCartModel.products.push(value)
+    addProduct(value)
   }
 
 

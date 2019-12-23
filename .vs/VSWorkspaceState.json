@@ -3,10 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\login-form",
+    "\\src\\app\\change-product-img",
     "\\src\\app\\models",
-    "\\src\\app\\navigation-bar"
+    "\\src\\app\\product-details",
+    "\\src\\app\\products",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\models\\AccountModel.ts",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

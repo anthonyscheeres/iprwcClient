@@ -4,6 +4,7 @@ import { fetchJsonGet, fetchJsonPost } from './http';
 import { ProtocolR } from '../models/Protocol';
 import { ProductModel } from '../models/ProductModel';
 import { DataModel } from '../models/DataModel';
+import { ShoppingCartModel } from '../models/ShoppingCartModel';
 
 
 export function urlProduct() {
@@ -17,6 +18,14 @@ export function urlProduct() {
 export function loadProducts() {
   var url = urlProduct()
   return fetchJsonGet(url);
+}
+
+
+export function addProduct(value: ProductModel) {
+
+    ShoppingCartModel.products.push(value)
+  
+
 }
 
 export function deleteProductById(product: ProductModel ) {

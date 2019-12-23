@@ -25,7 +25,7 @@
               [ngStyle]="{backgroundColor: selected == value ? '#F2F2F2': 'transparent'}">
             <td class="col-md-2">   <img   draggable="true" (dragstart)="drag($event, value)" class="rounded"  src="{{value.img}}" />
             </td >
-            <td class="col-md-2" draggable="true" (dragstart)="drag($event, value)">
+            <td class="col-md-2" (dblclick)="click(value)"draggable="true" (dragstart)="drag($event, value)">
               {{ value.name_p }}
             </td>
             <td class="col-md-2">{{ value.price }}</td>

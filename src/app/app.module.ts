@@ -21,8 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AdminComponent } from './admin/admin.component';
 import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.component';
-
-
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 
@@ -30,6 +29,8 @@ import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.com
 @NgModule({
 
   declarations: [
+    ProductDetailsComponent,
+   
     AppComponent,
     AddProductComponent,
     LoginComponent,
@@ -46,11 +47,17 @@ import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.com
 
         AdminComponent,
 
-        ChangeImgAdminComponent
+        ChangeImgAdminComponent,
+
+        ProductDetailsComponent
+  ],
+  exports: [
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,  // add  this
     NgbModule,
     AppRoutingModule,
     RouterModule.forRoot(
@@ -103,6 +110,10 @@ import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.com
   providers: [{
     provide: LocationStrategy, useClass: HashLocationStrategy
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ProductDetailsComponent]
 })
 export class AppModule { }
+
+
+export class NgbdModalBasicModule {}

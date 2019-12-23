@@ -12,13 +12,20 @@ import { DataModel } from '../models/DataModel';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-  condition1 = DataModel.account.hasSuperPermission
+  condition1 = DataModel.account.hasSuperPermission;
+  myStyles = {
+    'visibility': 'hidden'
 
+  };
 
   mySubscription: Subscription
 
   doStuff() {
     this.checkCurrentPermission();
+    this.myStyles = {
+      'visibility': 'visible'
+
+    }
   }
 
   constructor(private _router: Router) {
