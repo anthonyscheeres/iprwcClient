@@ -10,6 +10,7 @@ import { HttpClient } from "@angular/common/http";
 import { ShoppingCartModel } from '../models/ShoppingCartModel';
 import { DragContainer } from '../models/DragContainer';
 import { hasSuperPermission } from '../services/permission';
+import { ProductsModel } from '../models/ProductsModel';
 
 
 @Component({
@@ -21,7 +22,7 @@ import { hasSuperPermission } from '../services/permission';
 })
 export class ProductsComponent implements OnInit {
   static currentlySelectedProduct;
-  dataFromServer: any 
+  dataFromServer: any = ProductsModel.products
   static currentSelected: any = null;
   private selected: ProductModel;
 
@@ -39,6 +40,7 @@ export class ProductsComponent implements OnInit {
       .subscribe(
         responseData => {
           this.dataFromServer = responseData;
+          ProductsModel.products = responseData;
           console.log(responseData);
         }
       )

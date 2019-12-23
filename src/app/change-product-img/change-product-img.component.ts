@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
+import { ProductsModel } from '../models/ProductsModel';
 
 @Component({
   selector: 'app-change-product-img',
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./change-product-img.component.css']
 })
 export class ChangeProductImgComponent implements OnInit {
-  dataFromServer: any
+  dataFromServer: any = ProductsModel.products
   f: string;
   static currentSelected: any = null;
   private selected: ProductModel;
@@ -26,7 +27,7 @@ export class ChangeProductImgComponent implements OnInit {
       .subscribe(
         responseData => {
           this.dataFromServer = responseData;
-          // console.log(responseData);
+          ProductsModel.products = responseData
         })
   }
 
