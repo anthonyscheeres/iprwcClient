@@ -3,10 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\navigation-bar",
-    "\\src\\app\\services",
-    "\\src\\app\\shopping-cart"
+    "\\src\\app\\login-form",
+    "\\src\\app\\models",
+    "\\src\\app\\navigation-bar"
   ],
-  "SelectedNode": "\\src\\app\\navigation-bar\\navigation-bar.component.ts",
+  "SelectedNode": "\\src\\app\\models\\AccountModel.ts",
   "PreviewInSolutionExplorer": false
 }

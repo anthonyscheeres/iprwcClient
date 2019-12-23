@@ -1,6 +1,7 @@
 import { fetchJsonPost, fetchPost } from './http';
 import { ServerModel } from '../models/ServerModel';
 import { DataModel } from '../models/DataModel';
+import { AccountModel } from '../models/AccountModel';
 
 export function hasDelete() {
   var host = ServerModel.host;
@@ -89,12 +90,12 @@ export async function setHasDelete() {
 }
 
 export function logOut() {
-  
-  nullToken()
+  DataModel.account = new AccountModel();
+/*  nullToken()
   nullHasWrite()
   nullHasDelete()
   nullHasRead()
-  nullHasSuperPermission() 
+  nullHasSuperPermission() */
 }
 
 export async function nullHasSuperPermission() {
