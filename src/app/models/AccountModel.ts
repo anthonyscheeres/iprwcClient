@@ -9,7 +9,6 @@ export class AccountModel {
   static hasDelete = getHasDeleteFromCookie()
   static hasRead = getHasReadFromCookie()
   static hasSuperPermission: boolean = getHasAdminFromCookie()
-
   constructor() { }
 
 }

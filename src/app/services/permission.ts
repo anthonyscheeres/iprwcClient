@@ -96,36 +96,36 @@ export function logOut() {
   nullHasSuperPermission() 
 }
 
-export function nullHasSuperPermission() {
-  AccountModel.hasSuperPermission = null
+export async function nullHasSuperPermission() {
+  AccountModel.hasSuperPermission = false
 
-  localStorage.setItem("hasSuperPermission", null)
+  localStorage.setItem("hasSuperPermission", "false")
 }
 
-export function nullToken() {
-  AccountModel.token = null
+export async function nullToken() {
+  AccountModel.token = "TOKEN"
 
-  localStorage.setItem("token", null)
+  localStorage.setItem("token", "TOKEN")
 }
 
 
 
-export function nullHasWrite() {
-  AccountModel.hasWrite = null
+export async function nullHasWrite() {
+  AccountModel.hasWrite = false
 
-  localStorage.setItem("hasWrite", null)
+  localStorage.setItem("hasWrite", "false")
 }
 
-export function nullHasDelete() {
-  AccountModel.hasDelete = null
+export async function nullHasDelete() {
+  AccountModel.hasDelete = false
 
-  localStorage.setItem("hasDelete", null)
+  localStorage.setItem("hasDelete", "false")
 }
 
-export function nullHasRead() {
-  AccountModel.hasRead = null
+export async function nullHasRead() {
+  AccountModel.hasRead = false
 
-  localStorage.setItem("hasRead", null)
+  localStorage.setItem("hasRead", "false")
 }
 
 
