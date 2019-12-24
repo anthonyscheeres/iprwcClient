@@ -5,10 +5,8 @@
     "\\src\\app",
     "\\src\\app\\change-product-img",
     "\\src\\app\\models",
-    "\\src\\app\\product-details",
-    "\\src\\app\\products",
-    "\\src\\app\\services"
+    "\\src\\app\\products"
   ],
-  "SelectedNode": "\\src\\app\\app.module.ts",
+  "SelectedNode": "\\src\\app\\models\\ServerModel.ts",
   "PreviewInSolutionExplorer": false
 }

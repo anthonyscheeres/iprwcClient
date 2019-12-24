@@ -13,6 +13,8 @@ import { DataModel } from '../models/DataModel';
 })
 export class NavigationBarComponent implements OnInit {
   condition1 = DataModel.account.hasSuperPermission;
+  productCount: number = ShoppingCartModel.products.length
+
   myStyles = {
     'visibility': 'hidden'
 
@@ -26,6 +28,7 @@ export class NavigationBarComponent implements OnInit {
       'visibility': 'visible'
 
     }
+    this.productCount = ShoppingCartModel.products.length
   }
 
   constructor(private _router: Router) {
