@@ -19,7 +19,7 @@ export class PopUpComponent implements OnInit {
 
 
   open(value) {
-    addProduct(value)
+    addProduct(this.product)
   }
 
   
