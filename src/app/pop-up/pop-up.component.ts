@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProductModel } from '../models/ProductModel';
+import { addProduct } from '../services/product';
 
 @Component({
   selector: 'app-pop-up',
@@ -15,6 +16,11 @@ export class PopUpComponent implements OnInit {
   }
 
   constructor(private modalService: NgbModal) { }
+
+
+  open(value) {
+    addProduct(value)
+  }
 
   
 }

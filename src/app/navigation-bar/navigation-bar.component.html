@@ -6,38 +6,39 @@
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
-      <div class="navbar-header">
+    
+    <ul class="navbar-nav mr-auto">
+      <li class="navbar-header">
         <a class="navbar-brand" href="#">Webshop</a>
-      </div>
-      <ul class="navbar-nav mr-auto">
-        <li>
-          <a class="nav-link" routerLink="/">Home</a>
-        </li>
-        <li class="nav-item">
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
 
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/shop">Shop</a>
-        </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/shop">Shop</a>
+      </li>
 
-        <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
-          <a class="nav-link" routerLink="/admin">New Product</a>
-        </li>
+      <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
+        <a class="nav-link" routerLink="/admin">New Product</a>
+      </li>
 
-        <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
-          <a class="nav-link" routerLink="/admin-img">Change product</a>
-        </li>
-
-
-
-        <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
-          <a class="nav-link" routerLink="/users">Users</a>
-        </li>
+      <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
+        <a class="nav-link" routerLink="/admin-img">Change product</a>
+      </li>
 
 
 
+      <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
+        <a class="nav-link" routerLink="/users">Users</a>
+      </li>
 
-      </ul>
+
+
+
+    </ul>
       <ul class="nav navbar-nav navbar-right">
         <li (drop)="drop($event, value)"
             (dragover)="allowDrop($event)"><a class="nav-link" routerLink="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping-cart  <font color="red">{{productCount}}</font> </a></li>
