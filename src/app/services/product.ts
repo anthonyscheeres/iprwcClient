@@ -44,14 +44,15 @@ export function deleteProductById(product: ProductModel ) {
 
 
 
-export function insertProduct(name, price) {
+export function insertProduct(name, price, description) {
   var host = ServerModel.host;
   var port = ServerModel.port;
   var token = DataModel.account.token;
   var url = "http://" + host + ":" + port + "/product/"+ token + "/create";
   var json = JSON.stringify({
     "name_p": name,
-    "price": price
+    "price": price,
+    "description": description
   });
 
 

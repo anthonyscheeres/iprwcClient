@@ -18,7 +18,8 @@ export class AddProductComponent implements OnInit {
     var target = event.target
     var name = target.querySelector('#name').value
     var price = target.querySelector('#price').value
-    await insertProduct(name, price);
+    var description = target.querySelector('#description').value
+    await insertProduct(name, price, description);
   }
 }
 
