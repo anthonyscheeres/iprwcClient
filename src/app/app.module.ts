@@ -49,6 +49,7 @@ import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.com
     ChangeImgAdminComponent
   ],
   imports: [
+
     BrowserModule,
     HttpClientModule,
     NgbModule,
