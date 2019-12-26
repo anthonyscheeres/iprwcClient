@@ -3,4 +3,5 @@ export class ProductModel {
   price: number;
   id: number;
   img: String;
+  description: String;
 }

@@ -47,7 +47,7 @@ export class ProductsComponent implements OnInit {
   }
 
   click(value) {
-    const modalRef = this.modalService.open(PopUpComponent);
+    const modalRef = this.modalService.open(PopUpComponent, { windowClass: "myCustomModalClass" });
     modalRef.componentInstance.product = value;
   }
 

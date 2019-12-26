@@ -5,7 +5,10 @@
 .table-fixed thead {
   width: 100%;
 }
-
+.myCustomModalClass .modal-dialog {
+  max-width: 70%;
+  max-height: 70%;
+}
 img {
   width: 10ex;
   height: 10ex;
