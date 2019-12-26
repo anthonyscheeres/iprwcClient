@@ -46,7 +46,7 @@ export class ProductsComponent implements OnInit {
   }
 
   click(value) {
- 
+    this.modalService.open(value, { ariaLabelledBy: 'modal-basic-title' })
   }
 
 
