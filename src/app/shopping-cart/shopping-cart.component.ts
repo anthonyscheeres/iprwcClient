@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductModel } from '../models/ProductModel';
 import { ShoppingCartModel } from '../models/ShoppingCartModel';
@@ -11,10 +11,10 @@ import { interval, Subscription } from 'rxjs';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  dataFromServer: ProductModel[] = ShoppingCartModel.products;
+  @Input() dataFromServer: ProductModel[] = ShoppingCartModel.products;
   static currentSelected: any = null;
-  private selected: ProductModel;
-  totalSum: number = this.sum()
+   private selected: ProductModel;
+totalSum: number = this.sum()
   mySubscription: Subscription
 
   doStuff() {
