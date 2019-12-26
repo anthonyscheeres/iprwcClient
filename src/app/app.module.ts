@@ -21,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AdminComponent } from './admin/admin.component';
 import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.component';
+import { PopUpComponent } from './pop-up/pop-up.component';
 
 
 
@@ -46,7 +47,9 @@ import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.com
 
     AdminComponent,
 
-    ChangeImgAdminComponent
+    ChangeImgAdminComponent,
+
+    PopUpComponent
   ],
   imports: [
 
@@ -104,6 +107,7 @@ import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.com
   providers: [{
     provide: LocationStrategy, useClass: HashLocationStrategy
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PopUpComponent]
 })
 export class AppModule { }

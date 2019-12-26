@@ -10,6 +10,7 @@ import { ShoppingCartModel } from '../models/ShoppingCartModel';
 import { DragContainer } from '../models/DragContainer';
 import { hasSuperPermission } from '../services/permission';
 import { ProductsModel } from '../models/ProductsModel';
+import { PopUpComponent } from '../pop-up/pop-up.component';
 
 
 @Component({
@@ -46,7 +47,7 @@ export class ProductsComponent implements OnInit {
   }
 
   click(value) {
-    this.modalService.open(value, { ariaLabelledBy: 'modal-basic-title' })
+    this.modalService.open(PopUpComponent)
   }
 
 
