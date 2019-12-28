@@ -22,7 +22,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { AdminComponent } from './admin/admin.component';
 import { ChangeImgAdminComponent } from './change-img-admin/change-img-admin.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
-
+import { RecaptchaModule } from 'angular-google-recaptcha';
 
 
 
@@ -52,7 +52,9 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     PopUpComponent
   ],
   imports: [
-
+   RecaptchaModule.forRoot({
+     siteKey: '6LereMoUAAAAAETiElIcVZmAc9YbKZ8qMG0SOj72',
+        }),
     BrowserModule,
     HttpClientModule,
     NgbModule,

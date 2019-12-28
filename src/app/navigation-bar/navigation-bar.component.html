@@ -1,4 +1,5 @@
 
+<div class="header-firstnav sticky-top">
 
 
 
@@ -6,7 +7,7 @@
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
-    
+
     <ul class="navbar-nav mr-auto">
       <li class="navbar-header">
         <a class="navbar-brand" href="#">Webshop</a>
@@ -39,14 +40,15 @@
 
 
     </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li (drop)="drop($event, value)"
-            (dragover)="allowDrop($event)"><a class="nav-link" routerLink="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping-cart  <font color="red">{{productCount}}</font> </a></li>
-        <li><a class="nav-link" routerLink="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li>     <a class="nav-link" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li>     <a class="nav-link" (click)="logOut()"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
-      </ul>
-    
+    <ul class="nav navbar-nav navbar-right">
+      <li (drop)="drop($event, value)"
+          (dragover)="allowDrop($event)"><a class="nav-link" routerLink="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping-cart  <font color="red">{{productCount}}</font> </a></li>
+      <li><a class="nav-link" routerLink="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li>     <a class="nav-link" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li>     <a class="nav-link" (click)="logOut()"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+    </ul>
+
   </nav>
 
 
+  </div>

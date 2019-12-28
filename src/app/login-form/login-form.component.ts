@@ -12,6 +12,9 @@ import { DataModel } from '../models/DataModel';
   encapsulation: ViewEncapsulation.None
 })
 export class LoginFormComponent implements OnInit {
+ 
+
+
   constructor(private _router: Router) { }
 
   ngOnInit() {
@@ -24,12 +27,13 @@ export class LoginFormComponent implements OnInit {
   *
   */
   async loginUser(event) {
+
     event.preventDefault()
     const target = event.target
 
     const username = target.querySelector('#username').value
     const password = target.querySelector('#password').value
-
+   
 
 
     await login(username, password).then(response => {
@@ -40,7 +44,9 @@ export class LoginFormComponent implements OnInit {
        setHasWhatPermission();
         this._router.navigate(['/shop']);
       }
-    });
+
+    })
+    ;
 
 
 

@@ -3,9 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\home",
-    "\\src\\app\\products"
+    "\\src\\app\\add-product",
+    "\\src\\app\\change-product-img",
+    "\\src\\app\\login-form",
+    "\\src\\app\\navigation-bar",
+    "\\src\\app\\register-form"
   ],
-  "SelectedNode": "\\src\\index.html",
+  "SelectedNode": "\\src\\app\\add-product\\add-product.component.ts",
   "PreviewInSolutionExplorer": false
 }

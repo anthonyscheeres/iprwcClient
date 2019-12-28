@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServerModel } from '../models/ServerModel';
 import { insertProduct } from '../services/product';
 import { Router } from '@angular/router';
+import { responseR } from '../models/ResponseRequest';
 
 @Component({
   selector: 'app-add-product',
@@ -19,7 +20,14 @@ export class AddProductComponent implements OnInit {
     var name = target.querySelector('#name').value
     var price = target.querySelector('#price').value
     var description = target.querySelector('#description').value
-    await insertProduct(name, price, description);
+    await insertProduct(name, price, description).then(response => {
+
+      if (response != responseR.fail) {
+      
+        this._router.navigate(['/shop']);
+      }
+
+    })
   }
 }
 
