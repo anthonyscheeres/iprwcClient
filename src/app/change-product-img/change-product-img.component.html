@@ -13,13 +13,13 @@
           (click)="setSelected(value)"
           [ngStyle]="{backgroundColor: selected == value ? '#F2F2F2': 'transparent'}">
         <td class="col-md-2">
-          <img class="rounded" src="{{value.img}}" />
+          <img class="rounded-circle" src="{{value.img}}" />
         </td>
         <td>{{ value.name_p }}</td>
         <td>{{ value.price }}</td>
         <td>
 
-          <input type="file" (change)="fileChange($event, value)" placeholder="Open" accept=".jpg, .png">
+          <input type="file" (change)="fileChange($event, value)" placeholder="Open" accept=".jpg, .png, .gif, .webp, .svg, .ico, .cur, .bmp, .jpeg, .jfif, .pjpeg, .pjp">
 
         </td>
         <td class="col-md-2"><button type="button" class="btn btn-danger" (click)="open(value)">Remove product</button></td>
