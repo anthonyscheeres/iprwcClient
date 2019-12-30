@@ -5,48 +5,57 @@
 
 
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark" role="navigation">
+    <div class="d-lg-none d-xl-none">
+      <div class="btn-space">
+
+        <button class="btn btn-lg btn-outline-primary" (click)="toggleCollapse()" type="button"><span class="glyphicon glyphicon-menu-hamburger"></span> </button>
+        <!-- other navbar code omitted -->
+
+      </div>
+
+    </div>
 
 
-    <ul class="navbar-nav mr-auto">
-      <li class="navbar-header">
-        <a class="navbar-brand" href="#">Webshop</a>
-      </li>
-      <li>
-        <a class="nav-link" routerLink="/">Home</a>
-      </li>
-      <li class="nav-item">
+        <ul class="navbar-nav mr-auto" *ngIf="show">
+          <li class="navbar-header">
+            <a class="navbar-brand" href="#">Webshop</a>
+          </li>
+          <li>
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
 
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/shop">Shop</a>
-      </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/shop">Shop</a>
+          </li>
 
-      <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
-        <a class="nav-link" routerLink="/admin">New Product</a>
-      </li>
+          <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
+            <a class="nav-link" routerLink="/admin">New Product</a>
+          </li>
 
-      <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
-        <a class="nav-link" routerLink="/admin-img">Change product</a>
-      </li>
-
-
-
-      <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
-        <a class="nav-link" routerLink="/users">Users</a>
-      </li>
+          <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
+            <a class="nav-link" routerLink="/admin-img">Change product</a>
+          </li>
 
 
 
+          <li *ngIf="condition1" [ngStyle]="myStyles" class="nav-item">
+            <a class="nav-link" routerLink="/users">Users</a>
+          </li>
 
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li (drop)="drop($event, value)"
-          (dragover)="allowDrop($event)"><a class="nav-link" routerLink="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping-cart  <font color="red">{{productCount}}</font> </a></li>
-      <li><a class="nav-link" routerLink="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li>     <a class="nav-link" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      <li>     <a class="nav-link" (click)="logOut()"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
-    </ul>
+
+
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right" *ngIf="show">
+          <li (drop)="drop($event, value)"
+              (dragover)="allowDrop($event)"><a class="nav-link" routerLink="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping-cart  <font color="red">{{productCount}}</font> </a></li>
+          <li><a class="nav-link" routerLink="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li>     <a class="nav-link" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li>     <a class="nav-link" (click)="logOut()"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+        </ul>
 
   </nav>
 
