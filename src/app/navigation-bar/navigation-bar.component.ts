@@ -14,6 +14,11 @@ import { DataModel } from '../models/DataModel';
 export class NavigationBarComponent implements OnInit {
   condition1 = DataModel.account.hasSuperPermission;
   productCount: number = ShoppingCartModel.products.length
+  show: boolean = true;
+
+  toggleCollapse() {
+    this.show = !this.show
+  }
 
   myStyles = {
     'visibility': 'hidden'
