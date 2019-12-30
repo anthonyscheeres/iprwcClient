@@ -1,6 +1,4 @@
-# TestlabWeb
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+Go to mijnapplicatie.nl to see the front end in action the root username : Anthony4 password: passw0rd
 
 ## Development server
 
