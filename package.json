@@ -28,6 +28,7 @@
     "ngx-bootstrap": "^5.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "update": "^0.7.4",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
