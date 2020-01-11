@@ -11,6 +11,7 @@ import { FormControl } from '@angular/forms';
 })
 export class RegisterFormComponent implements OnInit {
   myRecaptcha: boolean = false;
+  this1: string = "";
 
   onScriptLoad() {
     console.log('Google reCAPTCHA loaded and is ready for use!')
@@ -42,6 +43,7 @@ s
           this._router.navigate(['/login']);
 
         }
+        else this.this1 = "oops something went wrong, is your email valid or try a different username"
       })
     };
 

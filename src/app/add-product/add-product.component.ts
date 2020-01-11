@@ -11,6 +11,7 @@ import { responseR } from '../models/ResponseRequest';
 })
 export class AddProductComponent implements OnInit {
 
+  this: string = "";
   constructor(private _router: Router) { }
 
   ngOnInit() {
@@ -25,7 +26,7 @@ export class AddProductComponent implements OnInit {
       if (response != responseR.fail) {
       
         this._router.navigate(['/shop']);
-      }
+      }else this.this = "Something went wrong"
 
     })
   }
