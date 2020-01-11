@@ -73,7 +73,7 @@ export function changeImg(img, id) {
     "img": img
   });
 
-  console.log(json)
+  //json)
 
 
 

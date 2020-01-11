@@ -145,12 +145,12 @@ export function hasSuperPermission() {
   var read = DataModel.account.hasRead;
   var write = DataModel.account.hasWrite;
 
-  console.log(delet)
-  console.log(read)
-  console.log(write)
+  //delet)
+  //read)
+  //write)
   var result = delet && read && write
   var val;
-  console.log("hasSuperPermission" +result)
+  //"hasSuperPermission" +result)
 
   if (val == null || val === false) {
     localStorage.setItem("hasSuperPermission", "false")

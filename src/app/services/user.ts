@@ -80,7 +80,7 @@ export function deleteUser(user) {
   var token = DataModel.account.token
   var urlToServer = "http://" + host + ":" + port + "/user/" + token + "/remove";
 
- // console.log("username:"+user)
+ // //"username:"+user)
   var data = JSON.stringify({
     "username": user,
     "password": null,
