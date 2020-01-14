@@ -3,8 +3,13 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\services"
+    "\\src\\app\\add-product",
+    "\\src\\app\\admin",
+    "\\src\\app\\change-img-admin",
+    "\\src\\app\\home",
+    "\\src\\app\\navigation-bar",
+    "\\src\\app\\users"
   ],
-  "SelectedNode": "\\src\\app\\services\\user.ts",
+  "SelectedNode": "\\src\\app\\navigation-bar\\navigation-bar.component.ts",
   "PreviewInSolutionExplorer": false
 }

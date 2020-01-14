@@ -45,7 +45,7 @@ export class NavigationBarComponent implements OnInit {
 
   checkCurrentPermission() {
     this.condition1 = !DataModel.account.hasSuperPermission;
- //   console.log(DataModel.account.hasSuperPermission)
+  // console.log(DataModel.account.hasSuperPermission)
   }
 
 

@@ -41,6 +41,7 @@ export class ProductsComponent implements OnInit {
         responseData => {
           this.dataFromServer = responseData;
           ProductsModel.products = responseData;
+
           console.log(responseData);
         }
       )

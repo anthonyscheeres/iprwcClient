@@ -43,7 +43,7 @@ export class LoginFormComponent implements OnInit {
         DataModel.account.token = response
         localStorage.setItem("token", response)
        setHasWhatPermission();
-        this._router.navigate(['/shop']);
+        this._router.navigate(['/']);
       }
       else this.this1 = "Oops think you entered invalid credentials, maybe you haven't verified your email yet?!"
 

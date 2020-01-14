@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import {getUsers, loadUsers, deleteUser, giveRead, giveWrite, giveDelete} from '../services/user';
 import { HttpClient } from "@angular/common/http";
 import {UserModel} from "../models/UserModel";
+import { DataModel } from '../models/DataModel';
 
 @Component({
   selector: 'app-users',
@@ -12,6 +13,8 @@ import {UserModel} from "../models/UserModel";
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+
+  hasSuper: boolean = !DataModel.account.hasSuperPermission;
   dataFromServer: any;
   static currentSelected: any = null;
   private selectedUser: UserModel;

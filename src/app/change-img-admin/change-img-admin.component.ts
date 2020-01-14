@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataModel } from '../models/DataModel';
 
 @Component({
   selector: 'app-change-img-admin',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangeImgAdminComponent implements OnInit {
 
+  hasSuper: boolean = !DataModel.account.hasSuperPermission;
   constructor() { }
 
   ngOnInit() {
