@@ -22,7 +22,6 @@ export class NavigationBarComponent implements OnInit {
 
   myStyles = {
     'visibility': 'hidden'
-
   };
 
   mySubscription: Subscription
@@ -44,8 +43,7 @@ export class NavigationBarComponent implements OnInit {
   }
 
   checkCurrentPermission() {
-    this.condition1 = !DataModel.account.hasSuperPermission;
-  // console.log(DataModel.account.hasSuperPermission)
+    this.condition1 = DataModel.account.token != null && DataModel.account.token !="";
   }
 
 
