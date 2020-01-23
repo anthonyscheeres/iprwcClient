@@ -3,8 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\navigation-bar"
+    "\\src\\app\\add-product",
+    "\\src\\app\\change-img-admin",
+    "\\src\\app\\change-product-img",
+    "\\src\\app\\pop-up",
+    "\\src\\app\\products",
+    "\\src\\app\\shopping-cart",
+    "\\src\\app\\users"
   ],
-  "SelectedNode": "\\src\\styles.css",
+  "SelectedNode": "\\src\\app\\add-product\\add-product.component.html",
   "PreviewInSolutionExplorer": false
 }
