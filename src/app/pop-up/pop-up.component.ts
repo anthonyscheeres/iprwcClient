@@ -18,7 +18,7 @@ export class PopUpComponent implements OnInit {
   constructor(private modalService: NgbModal) { }
 
 
-  open(value) {
+  open() {
     addProduct(this.product)
   }
 

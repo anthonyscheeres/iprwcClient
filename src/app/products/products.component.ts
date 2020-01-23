@@ -24,7 +24,7 @@ export class ProductsComponent implements OnInit {
   static currentlySelectedProduct;
   dataFromServer: any = ProductsModel.products
   static currentSelected: any = null;
-  private selected: ProductModel;
+ selected: ProductModel;
 
 
   constructor(private _router: Router, private modalService: NgbModal, private http: HttpClient) { }

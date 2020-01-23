@@ -15,7 +15,7 @@ export class ChangeProductImgComponent implements OnInit {
   dataFromServer: any = ProductsModel.products
   f: string;
   static currentSelected: any = null;
-  private selected: ProductModel;
+  selected: ProductModel;
   constructor(private _router: Router, private modalService: NgbModal, private http: HttpClient) { }
 
   async ngOnInit() {
