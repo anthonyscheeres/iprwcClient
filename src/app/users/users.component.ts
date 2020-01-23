@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
   hasSuper: boolean = !DataModel.account.hasSuperPermission;
   dataFromServer: any;
   static currentSelected: any = null;
-  private selectedUser: UserModel;
+   selectedUser: UserModel;
 
   constructor(private _router: Router, private http: HttpClient) { }
 

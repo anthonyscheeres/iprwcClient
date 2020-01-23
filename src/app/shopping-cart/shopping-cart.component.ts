@@ -13,7 +13,7 @@ import { interval, Subscription } from 'rxjs';
 export class ShoppingCartComponent implements OnInit {
   @Input() dataFromServer: ProductModel[] = ShoppingCartModel.products;
   static currentSelected: any = null;
-   private selected: ProductModel;
+ selected: ProductModel;
 totalSum: number = this.sum()
   mySubscription: Subscription
 
