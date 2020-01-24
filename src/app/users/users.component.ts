@@ -14,7 +14,7 @@ import { DataModel } from '../models/DataModel';
 })
 export class UsersComponent implements OnInit {
 
-  hasSuper: boolean = !DataModel.account.hasSuperPermission;
+  hasAdmin: boolean = DataModel.account.token != null && DataModel.account.token != "";
   dataFromServer: any;
   static currentSelected: any = null;
    selectedUser: UserModel;

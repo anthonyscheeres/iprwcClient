@@ -7,7 +7,7 @@ import { DataModel } from '../models/DataModel';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  hasSuper : boolean= !DataModel.account.hasSuperPermission;
+  hasAdmin: boolean = DataModel.account.token != null && DataModel.account.token != "";
 
   constructor() { }
 

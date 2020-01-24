@@ -8,7 +8,7 @@ import { DataModel } from '../models/DataModel';
 })
 export class ChangeImgAdminComponent implements OnInit {
 
-  hasSuper: boolean = !DataModel.account.hasSuperPermission;
+  hasAdmin: boolean = DataModel.account.token != null && DataModel.account.token != "";
   constructor() { }
 
   ngOnInit() {

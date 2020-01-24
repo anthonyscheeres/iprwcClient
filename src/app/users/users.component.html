@@ -1,32 +1,34 @@
-
-    <div class="container container-fluid">
-      <h2>Users</h2>
-      <hr>
-      <div class="table-responsive table-striped">
-        <table class="table">
-          <thead>
-          <th class="col-4" scope="col">Username</th>
-          <th class="col-4" scope="col">Permission</th>
-          </thead>
-          <tbody>
-            <tr class="row-12" *ngFor="let value of dataFromServer"
-                (click)="setSelected(value)"
-                [ngStyle]="{backgroundColor: selectedUser == value ? '#F2F2F2': 'transparent'}">
-              <td>{{ value.username }}</td>
-              <td>{{ value.permission }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <br>
-      <div class="btn-group" role="group">
-        <button (click)="onDeleteUser()" class=" btn btn-dark">Delete user</button>
-        <button (click)="onGiveRead()" class="btn btn-dark">Give read permission</button>
-        <button (click)="onGiveWrite()" class="btn btn-dark">Give write permission</button>
-        <button (click)="onGiveDelete()" class="btn btn-dark">Give delete permission</button>
-      </div>
-
-
-
+<div *ngIf="hasAdmin">
+  <div class="container container-fluid">
+    <h2>Users</h2>
+    <hr>
+    <div class="table-responsive table-striped">
+      <table class="table">
+        <thead>
+        <th class="col-4" scope="col">Username</th>
+        <th class="col-4" scope="col">Permission</th>
+        </thead>
+        <tbody>
+          <tr class="row-12" *ngFor="let value of dataFromServer"
+              (click)="setSelected(value)"
+              [ngStyle]="{backgroundColor: selectedUser == value ? '#F2F2F2': 'transparent'}">
+            <td>{{ value.username }}</td>
+            <td>{{ value.permission }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
+    <br>
+    <div class="btn-group" role="group">
+      <button (click)="onDeleteUser()" class=" btn btn-dark">Delete user</button>
+      <button (click)="onGiveRead()" class="btn btn-dark">Give read permission</button>
+      <button (click)="onGiveWrite()" class="btn btn-dark">Give write permission</button>
+      <button (click)="onGiveDelete()" class="btn btn-dark">Give delete permission</button>
+    </div>
+
+
+
+  </div>
+
+</div>

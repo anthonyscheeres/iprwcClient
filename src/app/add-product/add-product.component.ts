@@ -3,6 +3,7 @@ import { ServerModel } from '../models/ServerModel';
 import { insertProduct } from '../services/product';
 import { Router } from '@angular/router';
 import { responseR } from '../models/ResponseRequest';
+import { DataModel } from '../models/DataModel';
 
 @Component({
   selector: 'app-add-product',
@@ -11,6 +12,7 @@ import { responseR } from '../models/ResponseRequest';
 })
 export class AddProductComponent implements OnInit {
 
+  hasAdmin: boolean = DataModel.account.token != null && DataModel.account.token != "";
   this: string = "";
   constructor(private _router: Router) { }
 

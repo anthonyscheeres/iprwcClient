@@ -12,7 +12,7 @@ import { DataModel } from '../models/DataModel';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-  condition1 = DataModel.account.hasSuperPermission;
+  condition1 = DataModel.account.token != null && DataModel.account.token != "";
   productCount: number = ShoppingCartModel.products.length
   show: boolean = true;
   value
