@@ -37,7 +37,6 @@ totalSum: number = this.sum()
   }
   setSelected(product: ProductModel) {
     this.selected = product;
-
   }
 
   sum() {

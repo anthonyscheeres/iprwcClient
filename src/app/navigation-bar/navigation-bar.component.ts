@@ -66,6 +66,6 @@ export class NavigationBarComponent implements OnInit {
 
     var value = DragContainer.product
     
-    ShoppingCartModel.products.push(value)
+    ShoppingCartModel.products.push(value);
   }
 }

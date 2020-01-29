@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\add-product",
-    "\\src\\app\\change-img-admin",
-    "\\src\\app\\change-product-img",
+    "\\src\\app\\login-form",
+    "\\src\\app\\navigation-bar",
     "\\src\\app\\pop-up",
     "\\src\\app\\products",
+    "\\src\\app\\services",
     "\\src\\app\\shopping-cart",
     "\\src\\app\\users"
   ],
-  "SelectedNode": "\\src\\app\\add-product\\add-product.component.html",
+  "SelectedNode": "\\src\\app\\login-form\\login-form.component.ts",
   "PreviewInSolutionExplorer": false
 }
